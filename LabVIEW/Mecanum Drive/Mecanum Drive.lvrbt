@@ -11,7 +11,6 @@
 		<Item Name="mecanum tank 1.rcc" Type="Document" URL="../Robo_Joystick/mecanum tank 1.rcc"/>
 	</Item>
 	<Item Name="Robo_Programs" Type="Folder">
-		<Item Name="mecanum 1.vi" Type="VI" URL="../Robo_Programs/mecanum 1.vi"/>
 		<Item Name="mecanum tank 1.vi" Type="VI" URL="../Robo_Programs/mecanum tank 1.vi"/>
 	</Item>
 	<Item Name="Robo_Schema" Type="Folder">
