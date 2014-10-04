@@ -8,6 +8,7 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Item Name="Robo_Programs" Type="Folder">
 		<Item Name="ir test.vi" Type="VI" URL="../Robo_Programs/ir test.vi"/>
+		<Item Name="superpro.vi" Type="VI" URL="../Robo_Programs/superpro.vi"/>
 	</Item>
 	<Item Name="Robo_Schema" Type="Folder">
 		<Item Name="robo_schema.bin" Type="Document" URL="../robo_schema.bin"/>
