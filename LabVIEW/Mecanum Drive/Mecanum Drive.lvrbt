@@ -13,6 +13,7 @@
 	<Item Name="Robo_Programs" Type="Folder">
 		<Item Name="auto.vi" Type="VI" URL="../Robo_Programs/auto.vi"/>
 		<Item Name="AutoDrive_sub.vi" Type="VI" URL="../Robo_Programs/AutoDrive_sub.vi"/>
+		<Item Name="datalogging_sub.vi" Type="VI" URL="../Robo_Programs/datalogging_sub.vi"/>
 		<Item Name="mecanum tank 1.vi" Type="VI" URL="../Robo_Programs/mecanum tank 1.vi"/>
 	</Item>
 	<Item Name="Robo_Schema" Type="Folder">
