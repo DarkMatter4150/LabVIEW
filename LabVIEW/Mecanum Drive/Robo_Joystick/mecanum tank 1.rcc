@@ -2134,7 +2134,7 @@
 <NumElts>4</NumElts>
 <Array>
 <Name>All Actuators</Name>
-<Dimsize>4</Dimsize>
+<Dimsize>9</Dimsize>
 <String>
 <Name></Name>
 <Val>!Left Front</Val>
@@ -2150,19 +2150,47 @@
 <String>
 <Name></Name>
 <Val>!Right Back</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Lift</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Sweeper</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!C-Pivot</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!C-Flap</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Goal Clamp</Val>
 </String>
 </Array>
 <Array>
 <Name>Position Control</Name>
-<Dimsize>0</Dimsize>
+<Dimsize>3</Dimsize>
 <String>
 <Name></Name>
-<Val></Val>
+<Val>!C-Pivot</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!C-Flap</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Goal Clamp</Val>
 </String>
 </Array>
 <Array>
 <Name>Speed Control</Name>
-<Dimsize>4</Dimsize>
+<Dimsize>6</Dimsize>
 <String>
 <Name></Name>
 <Val>!Left Front</Val>
@@ -2178,11 +2206,19 @@
 <String>
 <Name></Name>
 <Val>!Right Back</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Lift</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Sweeper</Val>
 </String>
 </Array>
 <Array>
 <Name>Distance Control</Name>
-<Dimsize>4</Dimsize>
+<Dimsize>6</Dimsize>
 <String>
 <Name></Name>
 <Val>!Left Front</Val>
@@ -2198,6 +2234,14 @@
 <String>
 <Name></Name>
 <Val>!Right Back</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Lift</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Sweeper</Val>
 </String>
 </Array>
 </Cluster>
