@@ -2161,24 +2161,20 @@
 </String>
 <String>
 <Name></Name>
-<Val>!C-Pivot</Val>
-</String>
-<String>
-<Name></Name>
 <Val>!C-Flap</Val>
 </String>
 <String>
 <Name></Name>
 <Val>!Goal Clamp</Val>
 </String>
+<String>
+<Name></Name>
+<Val>!Pivot</Val>
+</String>
 </Array>
 <Array>
 <Name>Position Control</Name>
-<Dimsize>3</Dimsize>
-<String>
-<Name></Name>
-<Val>!C-Pivot</Val>
-</String>
+<Dimsize>2</Dimsize>
 <String>
 <Name></Name>
 <Val>!C-Flap</Val>
@@ -2190,7 +2186,7 @@
 </Array>
 <Array>
 <Name>Speed Control</Name>
-<Dimsize>6</Dimsize>
+<Dimsize>7</Dimsize>
 <String>
 <Name></Name>
 <Val>!Left Front</Val>
@@ -2214,11 +2210,15 @@
 <String>
 <Name></Name>
 <Val>!Sweeper</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Pivot</Val>
 </String>
 </Array>
 <Array>
 <Name>Distance Control</Name>
-<Dimsize>6</Dimsize>
+<Dimsize>7</Dimsize>
 <String>
 <Name></Name>
 <Val>!Left Front</Val>
@@ -2242,6 +2242,10 @@
 <String>
 <Name></Name>
 <Val>!Sweeper</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Pivot</Val>
 </String>
 </Array>
 </Cluster>
