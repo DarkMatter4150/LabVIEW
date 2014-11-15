@@ -11,6 +11,7 @@
 		<Item Name="mecanum tank 1.rcc" Type="Document" URL="../Robo_Joystick/mecanum tank 1.rcc"/>
 	</Item>
 	<Item Name="Robo_Programs" Type="Folder">
+		<Item Name="auto sl.vi" Type="VI" URL="../Robo_Programs/auto sl.vi"/>
 		<Item Name="auto-ramp.vi" Type="VI" URL="../Robo_Programs/auto-ramp.vi"/>
 		<Item Name="auto.vi" Type="VI" URL="../Robo_Programs/auto.vi"/>
 		<Item Name="AutoDrive_sub.vi" Type="VI" URL="../Robo_Programs/AutoDrive_sub.vi"/>
@@ -23,7 +24,7 @@
 	</Item>
 	<Item Name="2_Button_change.vi" Type="VI" URL="../SubVIs/2_Button_change.vi"/>
 	<Item Name="IntLibraryData" Type="LibraryData">
-		<Property Name="NI.LibData.ItemData" Type="Bin">%A#!"!!!!!%!"!"4!!%!!")!A!1!!!!#!!V!!Q!(4H6N:8*J9Q!71&amp;!!!1!!$&amp;2P='^M&lt;W&gt;Z2'&amp;U91!!!1!"!!!!&amp;1!!!!!!!!!!</Property>
+		<Property Name="NI.LibData.ItemData" Type="Bin">%A#!"!!!!!%!"!"4!!%!!")!A!1!!!!#!!V!!Q!(4H6N:8*J9Q!71&amp;!!!1!!$&amp;2P='^M&lt;W&gt;Z2'&amp;U91!!!1!"!!!!&amp;Q!!!!!!!!!!</Property>
 		<Property Name="NI.LibData.Version" Type="Str">1.0.0.0</Property>
 	</Item>
 </Library>
