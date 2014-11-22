@@ -13,7 +13,7 @@
 	<Item Name="Robo_Programs" Type="Folder">
 		<Item Name="auto sl.vi" Type="VI" URL="../Robo_Programs/auto sl.vi"/>
 		<Item Name="auto-ramp.vi" Type="VI" URL="../Robo_Programs/auto-ramp.vi"/>
-		<Item Name="auto.vi" Type="VI" URL="../Robo_Programs/auto.vi"/>
+		<Item Name="autocenter.vi" Type="VI" URL="../Robo_Programs/autocenter.vi"/>
 		<Item Name="AutoDrive_sub.vi" Type="VI" URL="../Robo_Programs/AutoDrive_sub.vi"/>
 		<Item Name="compass calibrate.vi" Type="VI" URL="../Robo_Programs/compass calibrate.vi"/>
 		<Item Name="datalogging_sub.vi" Type="VI" URL="../Robo_Programs/datalogging_sub.vi"/>
