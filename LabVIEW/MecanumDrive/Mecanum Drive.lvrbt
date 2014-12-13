@@ -20,6 +20,7 @@
 		<Item Name="lift-control.vi" Type="VI" URL="../Robo_Programs/lift-control.vi"/>
 		<Item Name="mecanum_tank_1.vi" Type="VI" URL="../Robo_Programs/mecanum_tank_1.vi"/>
 		<Item Name="mecanum_tank_1_sl.vi" Type="VI" URL="../Robo_Programs/mecanum_tank_1_sl.vi"/>
+		<Item Name="power-test.vi" Type="VI" URL="../Robo_Programs/power-test.vi"/>
 		<Item Name="practice.vi" Type="VI" URL="../Robo_Programs/practice.vi"/>
 	</Item>
 	<Item Name="Robo_Schema" Type="Folder">
@@ -27,7 +28,7 @@
 	</Item>
 	<Item Name="2_Button_change.vi" Type="VI" URL="../SubVIs/2_Button_change.vi"/>
 	<Item Name="IntLibraryData" Type="LibraryData">
-		<Property Name="NI.LibData.ItemData" Type="Bin">%A#!"!!!!!%!"!"4!!%!!")!A!1!!!!#!!V!!Q!(4H6N:8*J9Q!71&amp;!!!1!!$&amp;2P='^M&lt;W&gt;Z2'&amp;U91!!!1!"!!!!'Q!!!!!!!!!!</Property>
+		<Property Name="NI.LibData.ItemData" Type="Bin">%A#!"!!!!!%!"!"4!!%!!")!A!1!!!!#!!V!!Q!(4H6N:8*J9Q!71&amp;!!!1!!$&amp;2P='^M&lt;W&gt;Z2'&amp;U91!!!1!"!!!!(!!!!!!!!!!!</Property>
 		<Property Name="NI.LibData.Version" Type="Str">1.0.0.0</Property>
 	</Item>
 </Library>
