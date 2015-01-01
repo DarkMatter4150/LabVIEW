@@ -16,6 +16,7 @@
 		<Item Name="Joystick_Normalize.vi" Type="VI" URL="../Robo_Programs/Joystick_Normalize.vi"/>
 		<Item Name="lift-control.vi" Type="VI" URL="../Robo_Programs/lift-control.vi"/>
 		<Item Name="Tank.vi" Type="VI" URL="../Robo_Programs/Tank.vi"/>
+		<Item Name="two_button_change.vi" Type="VI" URL="../Robo_Programs/two_button_change.vi"/>
 	</Item>
 	<Item Name="Robo_Schema" Type="Folder">
 		<Item Name="robo_schema.bin" Type="Document" URL="../robo_schema.bin"/>
