@@ -80,11 +80,24 @@ void setup(void) {
 }
 
 void loop() {
+    // create a new file
+  char filename[] = "LOGGER00.CSV";
+  for (uint8_t i = 0; i < 100; i++) {
+    filename[6] = i/10 + '0';
+    filename[7] = i%10 + '0';
+    if (! SD.exists(filename)) {
+      // only open a new file if it doesn't exist
+      logfile = SD.open(filename, FILE_WRITE); 
+      break;  // leave the loop!
+    }
+  }
+  
   Serial.println("Program has begun");
-  File myFile = SD.open("batlog.csv", FILE_WRITE);
+  File myFile = SD.open(filename, FILE_WRITE);
+  myFile.println("New loop");
   for (int i = 0; i < 10; i++) {
     Serial.println("Program has begun");
-    myFile.println("Data!!");
+    myFile.println("New Data!!");
   }
   myFile.close();
 }
