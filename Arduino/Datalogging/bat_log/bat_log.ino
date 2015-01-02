@@ -66,7 +66,7 @@ int colorVals[][3] = {
   {0,255,0}, //Green
   {0,255,255}, //Blue-Green
   {0,0,255}, //Blue
-  {255,0,255} //Purple
+  {255,0,255} //Purplechar filename[] = "BATLOG00.CSV";
 };
 int colorIndex = 0;
 
@@ -97,6 +97,8 @@ enum cases{
   leave
 };
 
+char filename[] = "batlog00.csv";
+
 void setup(void) {
   
   Serial.begin(9600);
@@ -105,8 +107,23 @@ void setup(void) {
   pinMode(redLED, OUTPUT);
   pinMode(greenLED, OUTPUT);
   
+  /*Initializes filename*/
+  for (int i = 0; i < 100; i++) {
+    filename[6] = i/10 + '0';
+    filename[7] = i%10 + '0';
+    Serial.println("Tens: " + i/10);
+    Serial.println("Ones: " + i%10);
+    Serial.println("i: " + i);
+    if (!SD.exists(filename)) {
+      // only open a new file if it doesn't exist
+      logfile = SD.open(filename, FILE_WRITE); 
+      break;  // leave the loop!
+    }
+  }
+  logfile.close();
   currState = initialize;
-  
+  Serial.print("Filename: ");
+  Serial.println(filename);
 }
 
 void loop() {
@@ -117,13 +134,13 @@ void loop() {
     NXTSignal = digitalRead(3);
     upsideDown = digitalRead(7);
     mode = modeList[modeIndex];
-    String filename = "log.csv";
-    
+        
     switch(currState){
         
       case initialize: //Initialize
         /*Initialize SD card*/
         Serial.println("Current Case: Initialize");
+        
         logfile = SD.open(filename, FILE_WRITE);
         
         Serial.print("Initializing SD Card...");
@@ -137,7 +154,7 @@ void loop() {
         logfile.println("Card initialized");      
         
         Serial.print("Logging to: ");  
-        Serial.println("log.csv");
+        Serial.println(filename);
   
         Wire.begin();
         if (!RTC.begin()) {
@@ -160,7 +177,7 @@ void loop() {
         }
         Serial.println("Current Case: Idle");
         
-        logfile = SD.open("log.csv", FILE_WRITE);
+        logfile = SD.open(filename, FILE_WRITE);
         logfile.println("Battery data");
         logfile.close();
         Serial.println("Wrote to file");
