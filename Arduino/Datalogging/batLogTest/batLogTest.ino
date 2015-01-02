@@ -1,7 +1,7 @@
+#include <SD.h>
 #include <SPI.h>
-#include "SD.h"
 #include <Wire.h>
-#include "RTClib.h"
+#include <RTClib.h>
  
 /*Custom definitions*/
 #define log_interval 1000 //in milliseconds
@@ -16,9 +16,9 @@
 RTC_DS1307 RTC; //Define Real Time Clock Object
  
 const int chipSelect = 10;
- 
-File logfile = SD.open("batLog.csv", FILE_WRITE);
- 
+
+File logfile;
+
 void error(char *str) {
   Serial.print("error: ");
   Serial.println(str);
@@ -51,10 +51,14 @@ void setup(void) {
 //      break;
 //    }
 //  }
+
+  logfile = SD.open("batlog.csv", FILE_WRITE);
   
   if (! logfile) {
     error("Could not create file");
   }
+  
+  logfile.println("File initialized");
   
   Serial.print("Logging to: ");  
   Serial.println("batLog.csv");
@@ -77,7 +81,12 @@ void setup(void) {
 
 void loop() {
   Serial.println("Program has begun");
-  logfile.print("Hello world");
+  File myFile = SD.open("batlog.csv", FILE_WRITE);
+  for (int i = 0; i < 10; i++) {
+    Serial.println("Program has begun");
+    myFile.println("Data!!");
+  }
+  myFile.close();
 }
 
 
