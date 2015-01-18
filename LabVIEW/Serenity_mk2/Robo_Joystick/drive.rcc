@@ -13,7 +13,7 @@
 <Choice>Arcade Right</Choice>
 <Choice>Tank</Choice>
 <Choice>None</Choice>
-<Val>3</Val>
+<Val>1</Val>
 </EL>
 <U8>
 <Name>BadController</Name>
