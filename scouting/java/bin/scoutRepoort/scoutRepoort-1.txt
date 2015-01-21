@@ -1,0 +1,8 @@
+scoutRepoort.java
+2015-01-20 08:31:20 PM
+
+~=~
+Start Time: 08:31:20 PM
+End Time: 08:31:20 PM
+Elapsed Time (In nanoseconds): 47140289
+Elapsed Time (In seconds) : .0471402890

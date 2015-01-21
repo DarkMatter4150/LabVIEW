@@ -1,0 +1,13 @@
+scoutReport.java
+2015-01-20 08:31:36 PM
+~= Auto Stats =~
+Drove off ramps: 4/6
+Kickstands: 0/6
+Center goals: 0/6
+Rolling goals: 6/6
+120
+~=~
+Start Time: 08:31:36 PM
+End Time: 08:31:36 PM
+Elapsed Time (In nanoseconds): 44789459
+Elapsed Time (In seconds) : .0447894590

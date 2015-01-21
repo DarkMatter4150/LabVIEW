@@ -1,0 +1,8 @@
+scoutReport.java
+2015-01-20 07:33:38 PM
+
+~=~
+Start Time: 07:33:38 PM
+End Time: 07:33:38 PM
+Elapsed Time (In nanoseconds): 47378852
+Elapsed Time (In seconds) : .0473788520
