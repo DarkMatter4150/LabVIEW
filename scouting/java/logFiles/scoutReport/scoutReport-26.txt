@@ -1,0 +1,14 @@
+scoutReport.java
+2015-01-22 10:09:08 AM
+Program Started
+Checkpoint 1
+The init case ran
+Teams Present
+4150
+4324
+Please enter command.
+~=~
+Start Time: 10:09:08 AM
+End Time: 10:09:08 AM
+Elapsed Time (In nanoseconds): 46945463
+Elapsed Time (In seconds) : .0469454630

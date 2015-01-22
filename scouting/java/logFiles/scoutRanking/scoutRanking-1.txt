@@ -1,0 +1,8 @@
+scoutRanking.java
+2015-01-22 09:28:00 AM
+
+~=~
+Start Time: 09:28:00 AM
+End Time: 09:28:00 AM
+Elapsed Time (In nanoseconds): 88536102
+Elapsed Time (In seconds) : .0885361020

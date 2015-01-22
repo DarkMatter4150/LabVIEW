@@ -1,0 +1,21 @@
+scoutReport.java
+2015-01-22 08:36:25 AM
+==# Team: 4150 #==
+~ Auto Stats ~
+Drove off ramps: 2/2
+Kickstands: 0/2
+Center goals: 0/2
+Rolling goals: 2/2
+==# Team: 4324 #==
+~ Auto Stats ~
+Drove off ramps: 1/2
+Kickstands: 0/2
+Center goals: 0/2
+Rolling goals: 2/2
+
+4150's score: 137
+~=~
+Start Time: 08:36:25 AM
+End Time: 08:36:25 AM
+Elapsed Time (In nanoseconds): 48526371
+Elapsed Time (In seconds) : .0485263710
