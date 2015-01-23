@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.Arrays;
 
 class team {
@@ -73,15 +74,16 @@ public class scoutReport {
         // }
 
         /*Start CLI state machine*/
-        System.out.println("Checkpoint 1");
+        /*ERROR HERE*/
         String queue = "";
         String nextState = "INIT";
+        // Scanner in = new Scanner(System.in);
 
         while (nextState != "quit") {
             switch (nextState) {
 
                 case "INIT":
-                    System.out.println("The init case ran");
+                    System.out.println("The INIT case ran");
                     /*Add teams to a list*/
                     String teamNumbers = "4150,4324" ;
                     String[] teamList = teamNumbers.split(",");
@@ -93,21 +95,22 @@ public class scoutReport {
                     break;
 
                 case "IDLE":
-                    System.out.println("Please enter command.");
-                    String command = "rankings list";
-                    if (command == "rankings list") {
+                    System.out.println("Please enter command:");
+                    // String command = in.nextLine(); /*Needs work*/
+                    String command = "rankings";
+                    if (command == "rankings") {
                         System.out.println("Printing a list of rankings");
-                        queue += "FUNCTION2*";
+                        queue += "RANKS*";
                     } else if (command == "exit") {
                         queue += "EXIT*";
                     } else {
                         System.out.println("Command not recognized.");
+                        System.out.println("Command input: " + command);
+                        queue += "IDLE*";
                     }
-
                     break;
 
-                /*SOURCE OF ERROR*/
-                case "getRankings":
+                case "RANKS":
                     System.out.println("The rankings case ran");
                     queue += "IDLE*";
                     break;
@@ -121,18 +124,21 @@ public class scoutReport {
                     break;
 
                 default:
+                    System.out.println("Default case reached");
                     queue += "EXIT*";
                     break;
             }
-
+            System.out.println("Index of `*`: " + queue.indexOf("*"));
             if (queue.indexOf("*") != -1) {
                 /*
-                Takes the next string from the que (from the begining of
+                Takes the next string from the queue (from the begining of
                 the string to the asterisk)
                 */
                 nextState = queue.substring(0, queue.indexOf("*"));
+                System.out.println("nextState: " + nextState);
                 /*Removes the next state from the queue*/
                 queue = queue.substring((nextState.length() + 1), queue.length());
+                System.out.println("Remaining queue:" + queue);
             } else {
                 nextState = "quit";
             }

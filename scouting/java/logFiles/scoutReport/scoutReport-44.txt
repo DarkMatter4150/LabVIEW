@@ -1,0 +1,15 @@
+scoutReport.java
+2015-01-22 02:42:31 PM
+Program Started
+Checkpoint 1
+The SJ case ran
+Teams Present
+4150
+4324
+Index of `*`: 4
+nextState: IDLE
+~=~
+Start Time: 02:42:31 PM
+End Time: 02:42:31 PM
+Elapsed Time (In nanoseconds): 61703825
+Elapsed Time (In seconds) : .0617038250
