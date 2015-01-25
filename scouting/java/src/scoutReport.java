@@ -1,17 +1,27 @@
-import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
 
-class team {
+class Team implements Comparable<Team> {
 
     int autoRamps = 0;
     int autoKickstands = 0;
     int autoCenterGoals = 0;
     int autoRollingGoals = 0;
     int numOfMatches = 0;
-    String teamNumber;
+    int teamNumber;
+    int teamScore;
 
-    public team (String number) {
+    public Team (int number) {
         teamNumber = number;
+    }
+
+    public int compareTo (Team otherTeam) {
+        if (this.teamScore == otherTeam.teamScore) {
+            return 0;
+        } else if (this.teamScore > otherTeam.teamScore) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 
     public void addMatch (int[] matchArray) {
@@ -51,8 +61,8 @@ class team {
     public int getScore () {
         int autoScore = ((autoKickstands * 800) + (autoRamps * 200) + (autoCenterGoals * 1000) + (autoRollingGoals * 350)) / (4 * numOfMatches);
         int teleScore = 0;
-        int totalScore = autoScore + teleScore;
-        return totalScore;
+        int teamScore = autoScore + teleScore;
+        return teamScore;
     }
 
 }
@@ -60,22 +70,9 @@ class team {
 public class scoutReport {
 
     public static void main (String[] args) {
-        System.out.println("Program Started");
-        // team _4150 = new team("4150");
-        // team _4324 = new team("4324");
-        // int[][] scoutData = {{4150,1,0,0,1},{4150,1,0,0,1},{4324,0,0,0,1},{4324,1,0,0,1}};
-        // for (int i = 0; i < scoutData.length; i++) {
-        //     int[] matchStats = Arrays.copyOfRange(scoutData[i], 1, scoutData[i].length);
-        //     if (scoutData[i][0] == 4150) {
-        //         _4150.addMatch(matchStats);
-        //     } else if (scoutData[i][0] == 4324) {
-        //         _4324.addMatch(matchStats);
-        //     }
-        // }
 
-        /*Start CLI state machine*/
-        /*ERROR HERE*/
-        String queue = "";
+        System.out.println("Program Started");
+        String queue = "*";
         String nextState = "INIT";
         // Scanner in = new Scanner(System.in);
 
@@ -83,18 +80,25 @@ public class scoutReport {
             switch (nextState) {
 
                 case "INIT":
-                    System.out.println("The INIT case ran");
+                    System.out.println("--> The INIT case ran");
                     /*Add teams to a list*/
-                    String teamNumbers = "4150,4324" ;
-                    String[] teamList = teamNumbers.split(",");
-                    System.out.println("Teams Present");
-                    for (int i = 0; i < teamList.length; i++) {
-                        System.out.println(teamList[i]);
+                    int[] teamNums = {4150,4324};
+                    ArrayList<Team> teamList = new ArrayList<Team>();
+                    teamList.add(new Team(teamNums[0]));
+                    for (int i = 1; i <= teamNums.length; i++) {
+                        teamList.add(new Team(teamNums[i]));
                     }
-                    queue += "IDLE*";
+                    // String teamNumbers = "4150,4324" ;
+                    // String[] teamList = teamNumbers.split(",");
+                    // System.out.println("Teams Present");
+                    // for (int i = 0; i < teamList.length; i++) {
+                    //     System.out.println(teamList[i]);
+                    // }
+                    queue += "EXIT*";
                     break;
 
                 case "IDLE":
+                    System.out.println("--> Idle case ran");
                     System.out.println("Please enter command:");
                     // String command = in.nextLine(); /*Needs work*/
                     String command = "rankings";
@@ -111,34 +115,29 @@ public class scoutReport {
                     break;
 
                 case "RANKS":
-                    System.out.println("The rankings case ran");
-                    queue += "IDLE*";
-                    break;
-
-                case "FUNCTION2":
-                    System.out.println("The funciton2 case has ran");
+                    System.out.println("--> The rankings case ran");
+                    getRankings(2,teamList);
+                    queue += "EXIT*";
                     break;
 
                 case "EXIT":
-                    System.out.println("The program will exit");
+                    System.out.println("--> The program will exit");
                     break;
 
                 default:
-                    System.out.println("Default case reached");
+                    System.out.println("--> Default case reached");
                     queue += "EXIT*";
                     break;
             }
-            System.out.println("Index of `*`: " + queue.indexOf("*"));
+
             if (queue.indexOf("*") != -1) {
                 /*
                 Takes the next string from the queue (from the begining of
                 the string to the asterisk)
                 */
                 nextState = queue.substring(0, queue.indexOf("*"));
-                System.out.println("nextState: " + nextState);
                 /*Removes the next state from the queue*/
                 queue = queue.substring((nextState.length() + 1), queue.length());
-                System.out.println("Remaining queue:" + queue);
             } else {
                 nextState = "quit";
             }
@@ -147,18 +146,11 @@ public class scoutReport {
 
     }
 
-    // public static void getRankings (int numOfRanks) {
-    //     String[] fakeScores = {"474", "415"};
-    //     String[] teamRanks = sortTeams(fakeScores);
-    //
-    //     for (int i = 1; i <= numOfRanks; i++) {
-    //         System.out.println(i + ") " + teamRanks[i-1]);
-    //     }
-    //
-    // }
-    //
-    // public static String[] sortTeams (String[] teamScores) {
-    //     String[] sorted = {"4150", "4324"};
-    //     return sorted;
-    // }
+    public static void getRankings (int numOfRanks, ArrayList<Team> teamList) {
+        Collections.sort(teamList);
+        for (int i = 0; i < numOfRanks; i++) {
+            System.out.println(i + ") " + teamList.get(i));
+        }
+    }
+
 }

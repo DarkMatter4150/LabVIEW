@@ -1,9 +1,0 @@
-scoutReport.java
-2015-01-20 07:34:03 PM
-~= Auto Stats =~
-Drove off ramp: 1/1
-~=~
-Start Time: 07:34:03 PM
-End Time: 07:34:03 PM
-Elapsed Time (In nanoseconds): 48290358
-Elapsed Time (In seconds) : .0482903580
