@@ -74,49 +74,51 @@ public class scoutReport {
         System.out.println("Program Started");
         String queue = "*";
         String nextState = "INIT";
+        ArrayList<Team> list = new ArrayList<Team>();
         // Scanner in = new Scanner(System.in);
 
         while (nextState != "quit") {
             switch (nextState) {
 
                 case "INIT":
-                    System.out.println("--> The INIT case ran");
+                    System.out.println("* The INIT case ran");
                     /*Add teams to a list*/
                     int[] teamNums = {4150,4324};
-                    ArrayList<Team> teamList = new ArrayList<Team>();
-                    teamList.add(new Team(teamNums[0]));
-                    for (int i = 1; i <= teamNums.length; i++) {
-                        teamList.add(new Team(teamNums[i]));
+                    int[] matchData = {1,0,0,1};
+                    // ArrayList<Team> list = new ArrayList<Team>();
+                    for (int i = 0; i < teamNums.length; i++) {
+                        Team team = new Team(teamNums[i]);
+                        team.addMatch(matchData);
+                        team.getScore();
+                        list.add(team);
                     }
-                    // String teamNumbers = "4150,4324" ;
-                    // String[] teamList = teamNumbers.split(",");
-                    // System.out.println("Teams Present");
-                    // for (int i = 0; i < teamList.length; i++) {
-                    //     System.out.println(teamList[i]);
-                    // }
-                    queue += "EXIT*";
+                    queue += "IDLE*";
                     break;
 
                 case "IDLE":
-                    System.out.println("--> Idle case ran");
-                    System.out.println("Please enter command:");
+                    System.out.println("* Idle case ran");
+                    System.out.println("--> Please enter command:");
                     // String command = in.nextLine(); /*Needs work*/
                     String command = "rankings";
                     if (command == "rankings") {
-                        System.out.println("Printing a list of rankings");
                         queue += "RANKS*";
                     } else if (command == "exit") {
                         queue += "EXIT*";
                     } else {
-                        System.out.println("Command not recognized.");
-                        System.out.println("Command input: " + command);
+                        System.out.println("--> Command not recognized.");
+                        System.out.println("--> Command input: " + command);
                         queue += "IDLE*";
                     }
                     break;
 
                 case "RANKS":
-                    System.out.println("--> The rankings case ran");
-                    getRankings(2,teamList);
+                    System.out.println("* The rankings case ran");
+                    Collections.sort(list);
+                    // int numOfRanks = in.nextLine(); /*Needs work*/
+                    int numOfRanks = 2;
+                    for (int i = 0; i < numOfRanks; i++) {
+                        System.out.println(i+1 + ") " + list.get(i).teamNumber);
+                    }
                     queue += "EXIT*";
                     break;
 
@@ -125,7 +127,7 @@ public class scoutReport {
                     break;
 
                 default:
-                    System.out.println("--> Default case reached");
+                    // System.out.println("* Default case reached; Error occured in the QSM");
                     queue += "EXIT*";
                     break;
             }
@@ -144,13 +146,6 @@ public class scoutReport {
 
         }
 
-    }
-
-    public static void getRankings (int numOfRanks, ArrayList<Team> teamList) {
-        Collections.sort(teamList);
-        for (int i = 0; i < numOfRanks; i++) {
-            System.out.println(i + ") " + teamList.get(i));
-        }
     }
 
 }
