@@ -15,6 +15,7 @@ class Team implements Comparable<Team> {
     }
 
     public int compareTo (Team otherTeam) {
+        otherTeam.getScore();
         if (this.teamScore == otherTeam.teamScore) {
             return 0;
         } else if (this.teamScore > otherTeam.teamScore) {
@@ -56,12 +57,13 @@ class Team implements Comparable<Team> {
         System.out.println("Rolling goals: " + autoRollingGoals + "/" + numOfMatches);
         System.out.println("~ Team Score ~");
         System.out.println(this.getScore());
+        this.getScore();
     }
 
     public int getScore () {
         int autoScore = ((autoKickstands * 800) + (autoRamps * 200) + (autoCenterGoals * 1000) + (autoRollingGoals * 350)) / (4 * numOfMatches);
         int teleScore = 0;
-        int teamScore = autoScore + teleScore;
+        teamScore = autoScore + teleScore;
         return teamScore;
     }
 
@@ -74,7 +76,7 @@ public class scoutReport {
         System.out.println("Program Started");
         String queue = "*";
         String nextState = "INIT";
-        ArrayList<Team> list = new ArrayList<Team>();
+        ArrayList<Team> teamList = new ArrayList<Team>();
         // Scanner in = new Scanner(System.in);
 
         while (nextState != "quit") {
@@ -84,13 +86,20 @@ public class scoutReport {
                     System.out.println("* The INIT case ran");
                     /*Add teams to a list*/
                     int[] teamNums = {4150,4324};
-                    int[] matchData = {1,0,0,1};
-                    // ArrayList<Team> list = new ArrayList<Team>();
+                    int[][] matchData = getMatchData("testData.csv");
                     for (int i = 0; i < teamNums.length; i++) {
                         Team team = new Team(teamNums[i]);
-                        team.addMatch(matchData);
+                        for (int j = 0; j < matchData.length; j++) {
+                            if (matchData[j][0] == team.teamNumber) {
+                                int[] teamMatch = Arrays.copyOfRange(matchData[j], 1, matchData[j].length);
+                                team.addMatch(teamMatch);
+                                System.out.println("~= Team " + team.teamNumber + " =~");
+                                System.out.println("Match Added: Match " + (j+1));
+                            }
+                        }
+                        team.getStats();
                         team.getScore();
-                        list.add(team);
+                        teamList.add(team);
                     }
                     queue += "IDLE*";
                     break;
@@ -113,22 +122,22 @@ public class scoutReport {
 
                 case "RANKS":
                     System.out.println("* The rankings case ran");
-                    Collections.sort(list);
+                    Collections.sort(teamList);
                     // int numOfRanks = in.nextLine(); /*Needs work*/
                     int numOfRanks = 2;
                     for (int i = 0; i < numOfRanks; i++) {
-                        System.out.println(i+1 + ") " + list.get(i).teamNumber);
+                        System.out.println(i+1 + ") " + teamList.get(i).teamNumber);
                     }
                     queue += "EXIT*";
                     break;
 
                 case "EXIT":
-                    System.out.println("--> The program will exit");
+                    System.out.println("* The program will exit");
+                    queue = "";
                     break;
 
                 default:
                     // System.out.println("* Default case reached; Error occured in the QSM");
-                    queue += "EXIT*";
                     break;
             }
 
@@ -146,6 +155,11 @@ public class scoutReport {
 
         }
 
+    }
+
+    public static int[][] getMatchData (String filename) {
+        int[][] matchData = {{4150,0,0,0,1},{4324,1,0,0,1},{4150,1,0,0,1}};
+        return matchData;
     }
 
 }
