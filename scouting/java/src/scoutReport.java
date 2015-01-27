@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.Console;
 
 class Team implements Comparable<Team> {
 
@@ -72,12 +73,10 @@ class Team implements Comparable<Team> {
 public class scoutReport {
 
     public static void main (String[] args) {
-
-        System.out.println("Program Started");
         String queue = "*";
         String nextState = "INIT";
         ArrayList<Team> teamList = new ArrayList<Team>();
-        // Scanner in = new Scanner(System.in);
+        Console console = System.console();
 
         while (nextState != "quit") {
             switch (nextState) {
@@ -93,11 +92,8 @@ public class scoutReport {
                             if (matchData[j][0] == team.teamNumber) {
                                 int[] teamMatch = Arrays.copyOfRange(matchData[j], 1, matchData[j].length);
                                 team.addMatch(teamMatch);
-                                System.out.println("~= Team " + team.teamNumber + " =~");
-                                System.out.println("Match Added: Match " + (j+1));
                             }
                         }
-                        team.getStats();
                         team.getScore();
                         teamList.add(team);
                     }
@@ -106,11 +102,13 @@ public class scoutReport {
 
                 case "IDLE":
                     System.out.println("* Idle case ran");
-                    System.out.println("--> Please enter command:");
-                    // String command = in.nextLine(); /*Needs work*/
-                    String command = "rankings";
+                    // System.out.println("--> Please enter command:");
+                    String command = console.readLine("--> Please enter command:"); /*Needs work*/
+                    // String command = "report";
                     if (command == "rankings") {
                         queue += "RANKS*";
+                    } else if (command == "report") {
+                        queue += "REPORT*";
                     } else if (command == "exit") {
                         queue += "EXIT*";
                     } else {
@@ -123,12 +121,29 @@ public class scoutReport {
                 case "RANKS":
                     System.out.println("* The rankings case ran");
                     Collections.sort(teamList);
-                    // int numOfRanks = in.nextLine(); /*Needs work*/
-                    int numOfRanks = 2;
+                    int numOfRanks = Integer.parseInt(console.readLine("Please enter the number of teams to rank: "));
+                    // int numOfRanks = Integer.parseInt(in.nextLine()); /*Needs work*/
+                    // int numOfRanks = 2;
                     for (int i = 0; i < numOfRanks; i++) {
                         System.out.println(i+1 + ") " + teamList.get(i).teamNumber);
                     }
-                    queue += "EXIT*";
+                    queue += "IDLE*";
+                    break;
+
+                case "REPORT":
+                    int teamNum = Integer.parseInt(console.readLine("Please enter a team number you wish to recieve a report about: "));
+                    // int teamNum = in.nextLine();
+                    // int teamNum = 4150;
+                    for (int i = 0; i < teamList.size(); i++) {
+                        Team team = teamList.get(i);
+                        if (team.teamNumber == teamNum) {
+                            team.getStats();
+                            break;
+                        } else {
+                            System.out.println("Team " + teamNum + " not found.");
+                        }
+                    }
+                    queue += "IDLE*";
                     break;
 
                 case "EXIT":
