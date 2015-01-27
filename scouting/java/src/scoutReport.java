@@ -19,7 +19,7 @@ class Team implements Comparable<Team> {
         otherTeam.getScore();
         if (this.teamScore == otherTeam.teamScore) {
             return 0;
-        } else if (this.teamScore > otherTeam.teamScore) {
+        } else if (this.teamScore < otherTeam.teamScore) {
             return 1;
         } else {
             return -1;
@@ -50,6 +50,7 @@ class Team implements Comparable<Team> {
     }
 
     public void getStats () {
+        System.out.println("\033[H\033[2J"); /*Clear Screen*/
         System.out.println("==# Team: " + teamNumber + " #==");
         System.out.println("~ Auto Stats ~");
         System.out.println("Drove off ramps: " + autoRamps + "/" + numOfMatches);
@@ -82,7 +83,7 @@ public class scoutReport {
             switch (nextState) {
 
                 case "INIT":
-                    System.out.println("* The INIT case ran");
+                    System.out.println("\033[H\033[2J"); /*Clear Screen*/
                     /*Add teams to a list*/
                     int[] teamNums = {4150,4324};
                     int[][] matchData = getMatchData("testData.csv");
@@ -101,19 +102,23 @@ public class scoutReport {
                     break;
 
                 case "IDLE":
-                    System.out.println("* Idle case ran");
-                    // System.out.println("--> Please enter command:");
-                    String command = console.readLine("--> Please enter command:"); /*Needs work*/
+                    System.out.println("\033[H\033[2J"); /*Clear Screen*/
+                    System.out.println("--> Please enter command:");
+                    String command = console.readLine(); /*Needs work*/
                     // String command = "report";
-                    if (command == "rankings") {
+                    if (command.equals("rankings")) {
                         queue += "RANKS*";
-                    } else if (command == "report") {
+                    } else if (command.equals("report")) {
                         queue += "REPORT*";
-                    } else if (command == "exit") {
+                    } else if (command.equals("exit")) {
                         queue += "EXIT*";
+                    } else if (command.equals("help")){
+                        queue += "HELP*";
                     } else {
                         System.out.println("--> Command not recognized.");
-                        System.out.println("--> Command input: " + command);
+                        System.out.println();
+                        System.out.println("Press any key to continue");
+                        console.readLine();
                         queue += "IDLE*";
                     }
                     break;
@@ -122,22 +127,31 @@ public class scoutReport {
                     System.out.println("* The rankings case ran");
                     Collections.sort(teamList);
                     int numOfRanks = Integer.parseInt(console.readLine("Please enter the number of teams to rank: "));
-                    // int numOfRanks = Integer.parseInt(in.nextLine()); /*Needs work*/
-                    // int numOfRanks = 2;
+                    System.out.println("\033[H\033[2J"); /*Clear Screen*/
                     for (int i = 0; i < numOfRanks; i++) {
                         System.out.println(i+1 + ") " + teamList.get(i).teamNumber);
                     }
+                    System.out.println();
+                    System.out.println("Press any key to continue");
+                    console.readLine();
                     queue += "IDLE*";
                     break;
 
                 case "REPORT":
                     int teamNum = Integer.parseInt(console.readLine("Please enter a team number you wish to recieve a report about: "));
-                    // int teamNum = in.nextLine();
-                    // int teamNum = 4150;
+                    if (teamNum > teamList.size()) {
+                        System.out.println("Report size invalid.");
+                        System.out.println();
+                        System.out.println("Press any key to continue");
+                        console.readLine();
+                    }
                     for (int i = 0; i < teamList.size(); i++) {
                         Team team = teamList.get(i);
                         if (team.teamNumber == teamNum) {
                             team.getStats();
+                            System.out.println();
+                            System.out.println("Press any key to continue");
+                            console.readLine();
                             break;
                         } else {
                             System.out.println("Team " + teamNum + " not found.");
@@ -146,13 +160,25 @@ public class scoutReport {
                     queue += "IDLE*";
                     break;
 
+                case "HELP":
+                    System.out.println("\033[H\033[2J"); /*Clear Screen*/
+                    System.out.println("The following are a list of commands available:");
+                    System.out.println("(Remember, commands are case sensitive and are all lower case)");
+                    System.out.println("--> rankings: Prints a list (length determined by the user) of the teams with the highest score");
+                    System.out.println("--> report: User inputs a team number, and that team's statistics are printed");
+                    System.out.println("--> exit: Exits the program");
+                    System.out.println();
+                    System.out.println("Press any key to continue");
+                    console.readLine();
+                    queue += "IDLE*";
+                    break;
+
                 case "EXIT":
-                    System.out.println("* The program will exit");
+                    System.out.println("* The program will exit *");
                     queue = "";
                     break;
 
                 default:
-                    // System.out.println("* Default case reached; Error occured in the QSM");
                     break;
             }
 
@@ -173,7 +199,7 @@ public class scoutReport {
     }
 
     public static int[][] getMatchData (String filename) {
-        int[][] matchData = {{4150,0,0,0,1},{4324,1,0,0,1},{4150,1,0,0,1}};
+        int[][] matchData = {{4150,1,0,0,1},{4324,0,0,0,1},{4150,1,0,0,1}};
         return matchData;
     }
 

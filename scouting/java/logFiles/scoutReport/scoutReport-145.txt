@@ -1,0 +1,9 @@
+scoutReport.java
+2015-01-26 09:10:10 PM
+* The INIT case ran
+* Idle case ran
+~=~
+Start Time: 09:10:10 PM
+End Time: 09:10:10 PM
+Elapsed Time (In nanoseconds): 182569985
+Elapsed Time (In seconds) : .1825699850
