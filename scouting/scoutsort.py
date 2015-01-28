@@ -1,6 +1,12 @@
 #!/bin/python
 import operator
 
+class Team:
+    def __init__(self, teamNum):
+        self.teamNumber = teamNum
+    def getNumber(self):
+        return self.teamNumber
+
 #file = open("compiled-data.csv","r")
 #filedata = file.read()
 
