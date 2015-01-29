@@ -1,7 +1,7 @@
 import operator
 
 class Team:
-    def __init__(self, teamNum):
+    def __init__(self,teamNum):
         self.number = teamNum
         self.numOfMatches = 0
         self.autoRamps = 0
@@ -11,7 +11,7 @@ class Team:
         self.score = 0
 
     def addMatch(self, matchArray):
-        numOfMatches = 1
+        self.numOfMatches += 1
         if matchArray[1] == 1:
             self.autoRamps += 1
         elif matchArray[2] == 1:
@@ -47,9 +47,7 @@ for row in rawData:
     row = row.rsplit(",")
     row = [int(element) for element in row]
     matchData.append(row)
-print "Match Data:"
-print matchData
-
+    
 #Start QSM
 queue = "*"
 nextState = "INIT"
@@ -60,23 +58,30 @@ while (quit != True):
         print "INIT case ran"
         teamNums = [4150,4324]
         teamList = []
-
-        for teamNumber in teamNums:
-            teamList.append(Team(teamNumber))
-
-        testTeam = 4150
-
-        for eachTeam in teamList:
-            row = teamList.index(eachTeam)
-            if int(matchData[row][0]) == eachTeam.teamNumber:
-                eachTeam.addMatch(matchData[row])
-            if eachTeam.teamNumber == testTeam:
-                eachTeam.getReport()
+        for number in teamNums:
+            team = Team(number)
+            teamList.append(team)
+            for row in matchData:
+                if row[0] == team.number:
+                    team.addMatch(row)
         queue += "IDLE*"
 
     elif nextState == "IDLE":
         print "IDLE case ran"
-        queue += "EXIT*"
+        command = raw_input("Please enter command: ")
+        if command == "report":
+            queue += "REPORT*"
+        else:
+            print "Command not found, please try again"
+            queue += "IDLE*"
+    
+    elif nextState == "REPORT":
+        target = 4150
+        for team in teamList:
+            if team.number == target:
+                team.getReport()
+                break
+    
     elif nextState == "EXIT":
         print "EXIT case ran"
         queue = ""
