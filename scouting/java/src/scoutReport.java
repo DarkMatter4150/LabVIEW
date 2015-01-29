@@ -128,23 +128,24 @@ public class scoutReport {
                     Collections.sort(teamList);
                     int numOfRanks = Integer.parseInt(console.readLine("Please enter the number of teams to rank: "));
                     System.out.println("\033[H\033[2J"); /*Clear Screen*/
-                    for (int i = 0; i < numOfRanks; i++) {
-                        System.out.println(i+1 + ") " + teamList.get(i).teamNumber);
+                    if (numOfRanks > teamList.size()) {
+                        System.out.println("Report size invalid.");
+                        System.out.println();
+                        System.out.println("Press any key to continue");
+                        console.readLine();
+                    } else {
+                        for (int i = 0; i < numOfRanks; i++) {
+                            System.out.println(i+1 + ") " + teamList.get(i).teamNumber);
+                        }
+                        System.out.println();
+                        System.out.println("Press any key to continue");
+                        console.readLine();
                     }
-                    System.out.println();
-                    System.out.println("Press any key to continue");
-                    console.readLine();
                     queue += "IDLE*";
                     break;
 
                 case "REPORT":
                     int teamNum = Integer.parseInt(console.readLine("Please enter a team number you wish to recieve a report about: "));
-                    if (teamNum > teamList.size()) {
-                        System.out.println("Report size invalid.");
-                        System.out.println();
-                        System.out.println("Press any key to continue");
-                        console.readLine();
-                    }
                     for (int i = 0; i < teamList.size(); i++) {
                         Team team = teamList.get(i);
                         if (team.teamNumber == teamNum) {
