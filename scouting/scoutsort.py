@@ -23,7 +23,7 @@ class Team:
         self.updateScore()
 
     def getReport(self):
-        print "==# Team: " + str(number) + " #=="
+        print "==# Team: " + str(self.number) + " #=="
         print "~ Auto Stats ~"
         print "Drove off ramps: " + str(self.autoRamps) + "/" + str(self.numOfMatches)
         print "Kickstands: " + str(self.autoKickstands) + "/" + str(self.numOfMatches)
@@ -40,14 +40,14 @@ class Team:
 #file = open("compiled-data.csv","r")
 #filedata = file.read()
 
-filedata = "4150,1,0,0,1\n4324,1,0,0,1\n4150,1,0,0,1\n"
+filedata = "4150,1,0,0,1\n4324,1,0,0,1\n4150,1,0,1,1\n"
 rawData = filedata.splitlines()
 matchData = []
 for row in rawData:
     row = row.rsplit(",")
     row = [int(element) for element in row]
     matchData.append(row)
-    
+
 #Start QSM
 queue = "*"
 nextState = "INIT"
@@ -55,7 +55,6 @@ quit = False
 while (quit != True):
 
     if nextState == "INIT":
-        print "INIT case ran"
         teamNums = [4150,4324]
         teamList = []
         for number in teamNums:
@@ -64,26 +63,42 @@ while (quit != True):
             for row in matchData:
                 if row[0] == team.number:
                     team.addMatch(row)
+                    print "Match added to team " + str(team.number) + ":"
+                    print row
+            print team.getReport()
         queue += "IDLE*"
 
     elif nextState == "IDLE":
-        print "IDLE case ran"
         command = raw_input("Please enter command: ")
         if command == "report":
             queue += "REPORT*"
+        elif command == "rankings":
+            queue += "RANKS*"
+        elif command == "exit":
+            queue += "EXIT*"
         else:
             print "Command not found, please try again"
             queue += "IDLE*"
-    
+
+    elif nextState == "RANKS":
+        reportNum = int(raw_input("Please enter the number of teams to rank: "))
+        if reportNum <= len(teamList):
+            for i in range(0, reportNum):
+                print teamList[i].number
+        else:
+            print "Number of teams to report is greater than the number of teams present. Please try another command"
+        queue += "IDLE*"
+
     elif nextState == "REPORT":
-        target = 4150
+        target = int(raw_input("Please enter the number of the team you wish to report on: "))
         for team in teamList:
+            print "Searching for the target team"
             if team.number == target:
                 team.getReport()
                 break
-    
+        queue += "IDLE*"
+
     elif nextState == "EXIT":
-        print "EXIT case ran"
         queue = ""
 
     #Load next queue
@@ -92,5 +107,5 @@ while (quit != True):
         nextState = queue[0:delimeterIndex]
         queue = queue[delimeterIndex+1:len(queue)]
     except ValueError:
-        print "Queue is empty"
+        print "* Program will exit *"
         quit = True
