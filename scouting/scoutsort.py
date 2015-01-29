@@ -2,7 +2,7 @@ import operator
 
 class Team:
     def __init__(self, teamNum):
-        self.teamNumber = teamNum
+        self.number = teamNum
         self.numOfMatches = 0
         self.autoRamps = 0
         self.autoKickstands = 0
@@ -18,24 +18,24 @@ class Team:
             self.autoKickstands += 1
         elif matchArray[3] == 1:
             self.autoCenterGoal += 1
-        elif matcArray[4] == 1:
+        elif matchArray[4] == 1:
             self.autoRollingGoals += 1
-#        self.updateScore()
+        self.updateScore()
 
     def getReport(self):
-        print "==# Team: " + str(teamNumber) + " #=="
+        print "==# Team: " + str(number) + " #=="
         print "~ Auto Stats ~"
-        print ("Drove off ramps: " + str(self.autoRamps) + "/" + str(self.numOfMatches))
-        print ("Kickstands: " + str(self.autoKickstands) + "/" + str(self.numOfMatches))
-        print ("Center goals: " + str(self.autoCenterGoals) + "/" + str(self.numOfMatches))
-        print ("Rolling goals: " + str(self.autoRollingGoals) + "/" + str(self.numOfMatches))
-        print ("~ Team Score ~")
+        print "Drove off ramps: " + str(self.autoRamps) + "/" + str(self.numOfMatches)
+        print "Kickstands: " + str(self.autoKickstands) + "/" + str(self.numOfMatches)
+        print "Center goals: " + str(self.autoCenterGoals) + "/" + str(self.numOfMatches)
+        print "Rolling goals: " + str(self.autoRollingGoals) + "/" + str(self.numOfMatches)
+        print "~ Team Score ~"
         print self.score
 
-#    def updateScore(self):
-#        autoScore = ((self.autoKickstands * 800) + (self.autoRamps * 200) + (self.autoCenterGoals * 1000) + (self.autoRollingGoals * 350)) / (4 * self.numOfMatches)
-#        teleScore = 0
-#        score = autoScore + teleScore
+    def updateScore(self):
+        self.autoScore = ((self.autoKickstands * 800) + (self.autoRamps * 200) + (self.autoCenterGoals * 1000) + (self.autoRollingGoals * 350)) / (4 * self.numOfMatches)
+        self.teleScore = 0
+        self.score = self.autoScore + self.teleScore
 
 #file = open("compiled-data.csv","r")
 #filedata = file.read()
