@@ -88,24 +88,23 @@ class Team:
 file = open("python-data.csv","r")
 filedata = file.read()
 
-#filedata = "4150,1,0,0,1,1\n4324,1,0,0,1,0\n4150,1,0,1,1,1\n"
 rawData = filedata.splitlines()
+teamNums = []
 matchData = []
 for row in rawData:
     row = row.rsplit(",")
     row = [int(element) for element in row]
+    if row[0] not in teamNums:
+        teamNums.append(int(row[0]))
     matchData.append(row)
 
 #Start QSM
-os.system("clear")
 queue = "*"
 nextState = "INIT"
 quit = False
 while (quit != True):
 
     if nextState == "INIT":
-        
-        teamNums = [4150,4324]
         teamList = []
         for number in teamNums:
             team = Team(number)
@@ -125,10 +124,16 @@ while (quit != True):
             queue += "RANKS*"
         elif command == "refresh":
             queue += "INIT*"
+        elif command == "list teams":
+            queue += "LIST*"
+        elif command == "help":
+            queue += "HELP*"
         elif command == "exit":
             queue += "EXIT*"
         else:
-            print "Command not found, please try again"
+            print "Command not found, please try again."
+            print "Use the `help` command for information about available commands"
+            raw_input("\nPress any key to continue")
             queue += "IDLE*"
 
     elif nextState == "RANKS":
@@ -143,15 +148,35 @@ while (quit != True):
         queue += "IDLE*"
 
     elif nextState == "REPORT":
+        printError = True
         target = int(raw_input("Please enter the number of the team you wish to report on: "))
         for team in teamList:
-            print "Searching for the target team"
             if team.number == target:
                 team.getReport()
+                printError = False
                 break
+        if printError == True:
+            print "Team Not found, please try another team."
         raw_input("\nPress any key to continue")
         queue += "IDLE*"
 
+    elif nextState == "LIST":
+        print "Teams present:"
+        for team in teamList:
+            print team.number
+        raw_input("\nPress any key to continue")
+        queue += "IDLE*"
+
+    elif nextState == "HELP":
+        print "The following are a list of commands that can be used. (Reminder: commands are case-sensitive)"
+        print ""
+        print "rankings - Prints a list (length determined by the user) of the teams with the highest score"
+        print "report - User inputs a team number, and that team's statistics are printed"
+        print "list teams - Prints a list of all the teams present"
+        print "exit - Exits the program"
+        print ""
+        raw_input("Press any key to continue")
+        queue += "IDLE*"
     elif nextState == "EXIT":
         queue = ""
 

@@ -9,5 +9,4 @@ for filename in ~/Documents/code/robotics-code/scouting/test-data/*.csv; do
         cat >> python-data.csv
     fi
 done
-echo "\033[H\033[2J"
 python scoutsort.py
