@@ -3,6 +3,7 @@ import os
 
 class Team:
     def __init__(self,teamNum):
+        #Initialize all variables for team attributes
         self.number = teamNum
         self.numOfMatches = 0
         self.autoRamps = 0
@@ -18,16 +19,16 @@ class Team:
         self.endGameOffFloor = 0
         self.penaltyTippedGoals = 0
         self.penaltyBlocked = 0
-
         self.score = 0
 
     def addMatch(self, matchArray):
+        #Increment the number of matches a team has played
         self.numOfMatches += 1
-        #Auto stats
-        if matchArray[2] == 1:
-            self.autoBallScored += 1
-        if matchArray[3] == 1:
-            self.autoRollingGoals += 1
+        
+        #Add statistics from match data file to attributes of a team
+        #Auto stats:
+        self.autoBallScored += matchArray[2]
+        self.autoRollingGoals += matchArray[3]
         if matchArray[4] == 1:
             self.autoKickstands += 1
         if matchArray[5] == 1:
