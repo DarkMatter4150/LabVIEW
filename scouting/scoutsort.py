@@ -1,9 +1,11 @@
+#!/usr/bin/python
+
 import operator
 import os
 
 class Team:
     def __init__(self,teamNum):
-        #Initialize all variables for team attributes
+        # Initialize all variables for team attributes
         self.number = teamNum
         self.numOfMatches = 0
         self.autoRamps = 0
@@ -22,11 +24,11 @@ class Team:
         self.score = 0
 
     def addMatch(self, matchArray):
-        #Increment the number of matches a team has played
+        # Increment the number of matches a team has played
         self.numOfMatches += 1
         
-        #Add statistics from match data file to attributes of a team
-        #Auto stats:
+        # Add statistics from match data file to attributes of a team
+        # Auto stats:
         self.autoBallScored += matchArray[2]
         self.autoRollingGoals += matchArray[3]
         self.autoKickstands += matchArray[4]
@@ -75,41 +77,47 @@ class Team:
         self.penaltyScore = ((self.penaltyTippedGoals * 1000) + (self.penaltyBlocked * 750)) / (2 * self.numOfMatches)
         self.score = self.autoScore + self.teleScore + self.endGameScore - self.penaltyScore
 
+# Opens the file to read match data from
 file = open("python-data.csv","r")
 filedata = file.read()
 
-rawData = filedata.splitlines()
+# Splits the opened CSV file into a usable 2D array
 teamNums = []
+rawData = filedata.splitlines()
 matchData = []
 for row in rawData:
     row = row.rsplit(",")
     row = [int(element) for element in row]
+    
+    # If a new team is found, add that team number to a list of all team numbers
     if row[0] not in teamNums:
         teamNums.append(int(row[0]))
     matchData.append(row)
 
 #Start QSM
 queue = ["INIT"]
-#nextState = "INIT"
-quit = False
 while (queue != []):
-    try:
-        nextState = queue.pop(0)
-    except IndexError:
-        print "Queue is empty"
-        quit = True
+    
+    # Removes and looks at the first element of the queue as the action to take
+    nextState = queue.pop(0)
     
     if nextState == "INIT":
+        
+        # Generates a list of Team objects from the list of team numbers
         teamList = []
         for number in teamNums:
             team = Team(number)
             teamList.append(team)
+            
+            # Searches the match data for a match that belongs to the Team
             for row in matchData:
                 if row[0] == team.number:
                     team.addMatch(row)
         queue.append("IDLE")
 
     elif nextState == "IDLE":
+        
+        # Waits for user input and addes the corresponding state to the end of the queue
         os.system("clear")
         command = raw_input("Please enter command: ")
         if command == "report":
@@ -131,30 +139,47 @@ while (queue != []):
             queue += "IDLE*"
 
     elif nextState == "RANKS":
+        
+        # Sorts the list of teams based on their score, highest score to lowest score
         teamList.sort(key=lambda team: team.score, reverse=True)
+    
+        # Requests a number of teams to rank and prints the top X teams in order
         reportNum = int(raw_input("Please enter the number of teams to rank: "))
+        
+        # Error Handling: Does not print team rank list if the number of teams requested is greater than the number of teams present
         if reportNum <= len(teamList):
             for i in range(0, reportNum):
                 print teamList[i].number
         else:
             print "Number of teams to report is greater than the number of teams present. Please try another command"
         raw_input("\nPress enter to continue")
+        
         queue.append("IDLE")
 
     elif nextState == "REPORT":
+        
         printError = True
+        
+        # Requests a team to print a statistical report on
         target = int(raw_input("Please enter the number of the team you wish to report on: "))
+        
+        # Finds the team requested and prints a statistical report
         for team in teamList:
             if team.number == target:
                 team.getReport()
                 printError = False
                 break
+            
+        # Error Handling: If team requested does not exits in the list, no team will be reported on.
         if printError == True:
             print "Team Not found, please try another team."
         raw_input("\nPress enter to continue")
+        
         queue.append("IDLE")
 
     elif nextState == "LIST":
+        
+        # Prints a list of all teams present
         print "Teams present:"
         for team in teamList:
             print team.number
@@ -162,6 +187,8 @@ while (queue != []):
         queue.append("IDLE")
 
     elif nextState == "HELP":
+        
+        # Prints a list of available commands with their respective discriptions
         print "The following are a list of commands that can be used. (Reminder: commands are case-sensitive)"
         print ""
         print "rankings - Prints a list (length determined by the user) of the teams with the highest score"
@@ -170,8 +197,12 @@ while (queue != []):
         print "exit - Exits the program"
         print ""
         raw_input("Press enter to continue")
+        
         queue.append("IDLE")
         
     elif nextState == "EXIT":
+        
+        # Empties the queue so that the QSM will stop
         queue = []
+        
 os.system("clear")
