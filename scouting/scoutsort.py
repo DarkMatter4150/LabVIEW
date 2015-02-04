@@ -29,31 +29,20 @@ class Team:
         #Auto stats:
         self.autoBallScored += matchArray[2]
         self.autoRollingGoals += matchArray[3]
-        if matchArray[4] == 1:
-            self.autoKickstands += 1
-        if matchArray[5] == 1:
-            self.autoRamps += 1
-        if matchArray[6] == 1:
-            self.autoCenterGoals += 1
+        self.autoKickstands += matchArray[4]
+        self.autoRamps += matchArray[5]
+        self.autoCenterGoals += matchArray[6]
         #Tele stats
-        if matchArray[7] > 0:
-            self.tele30trips += matchArray[7]
-        if matchArray[8] > 0:
-            self.tele60trips += matchArray[8]
-        if matchArray[9] > 0:
-            self.tele90trips += matchArray[9]
+        self.tele30trips += matchArray[7]
+        self.tele60trips += matchArray[8]
+        self.tele90trips += matchArray[9]
         #End Game Stats
-        if matchArray[10] > 0:
-            self.teleCenterGoals += matchArray[10]
-        if matchArray[11] > 0:
-            self.endGameParkingZone += matchArray[11]
-        if matchArray[12] > 0:
-            self.endGameOffFloor += matchArray[12]
+        self.teleCenterGoals += matchArray[10]
+        self.endGameParkingZone += matchArray[11]
+        self.endGameOffFloor += matchArray[12]
         #Penalties
-        if matchArray[13] > 0:
-            self.penaltyTippedGoals += matchArray[13]
-        if matchArray[14] > 0:
-            self.penaltyBlocked += matchArray[14]
+        self.penaltyTippedGoals += matchArray[13]
+        self.penaltyBlocked += matchArray[14]
         #Update team's score
         self.updateScore()
 
@@ -134,7 +123,7 @@ while (quit != True):
         else:
             print "Command not found, please try again."
             print "Use the `help` command for information about available commands"
-            raw_input("\nPress any key to continue")
+            raw_input("\nPress enter to continue")
             queue += "IDLE*"
 
     elif nextState == "RANKS":
@@ -145,7 +134,7 @@ while (quit != True):
                 print teamList[i].number
         else:
             print "Number of teams to report is greater than the number of teams present. Please try another command"
-        raw_input("\nPress any key to continue")
+        raw_input("\nPress enter to continue")
         queue += "IDLE*"
 
     elif nextState == "REPORT":
@@ -158,14 +147,14 @@ while (quit != True):
                 break
         if printError == True:
             print "Team Not found, please try another team."
-        raw_input("\nPress any key to continue")
+        raw_input("\nPress enter to continue")
         queue += "IDLE*"
 
     elif nextState == "LIST":
         print "Teams present:"
         for team in teamList:
             print team.number
-        raw_input("\nPress any key to continue")
+        raw_input("\nPress enter to continue")
         queue += "IDLE*"
 
     elif nextState == "HELP":
@@ -176,7 +165,7 @@ while (quit != True):
         print "list teams - Prints a list of all the teams present"
         print "exit - Exits the program"
         print ""
-        raw_input("Press any key to continue")
+        raw_input("Press enter to continue")
         queue += "IDLE*"
     elif nextState == "EXIT":
         queue = ""
