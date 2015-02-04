@@ -89,11 +89,16 @@ for row in rawData:
     matchData.append(row)
 
 #Start QSM
-queue = "*"
-nextState = "INIT"
+queue = ["INIT"]
+#nextState = "INIT"
 quit = False
-while (quit != True):
-
+while (queue != []):
+    try:
+        nextState = queue.pop(0)
+    except IndexError:
+        print "Queue is empty"
+        quit = True
+    
     if nextState == "INIT":
         teamList = []
         for number in teamNums:
@@ -102,24 +107,23 @@ while (quit != True):
             for row in matchData:
                 if row[0] == team.number:
                     team.addMatch(row)
-
-        queue += "IDLE*"
+        queue.append("IDLE")
 
     elif nextState == "IDLE":
         os.system("clear")
         command = raw_input("Please enter command: ")
         if command == "report":
-            queue += "REPORT*"
+            queue.append("REPORT")
         elif command == "rankings":
-            queue += "RANKS*"
+            queue.append("RANKS")
         elif command == "refresh":
-            queue += "INIT*"
+            queue.append("INIT")
         elif command == "list teams":
-            queue += "LIST*"
+            queue.append("LIST")
         elif command == "help":
-            queue += "HELP*"
+            queue.append("HELP")
         elif command == "exit":
-            queue += "EXIT*"
+            queue.append("EXIT")
         else:
             print "Command not found, please try again."
             print "Use the `help` command for information about available commands"
@@ -135,7 +139,7 @@ while (quit != True):
         else:
             print "Number of teams to report is greater than the number of teams present. Please try another command"
         raw_input("\nPress enter to continue")
-        queue += "IDLE*"
+        queue.append("IDLE")
 
     elif nextState == "REPORT":
         printError = True
@@ -148,14 +152,14 @@ while (quit != True):
         if printError == True:
             print "Team Not found, please try another team."
         raw_input("\nPress enter to continue")
-        queue += "IDLE*"
+        queue.append("IDLE")
 
     elif nextState == "LIST":
         print "Teams present:"
         for team in teamList:
             print team.number
         raw_input("\nPress enter to continue")
-        queue += "IDLE*"
+        queue.append("IDLE")
 
     elif nextState == "HELP":
         print "The following are a list of commands that can be used. (Reminder: commands are case-sensitive)"
@@ -166,15 +170,8 @@ while (quit != True):
         print "exit - Exits the program"
         print ""
         raw_input("Press enter to continue")
-        queue += "IDLE*"
+        queue.append("IDLE")
+        
     elif nextState == "EXIT":
-        queue = ""
-
-    #Load next queue
-    try:
-        delimeterIndex = queue.index("*")
-        nextState = queue[0:delimeterIndex]
-        queue = queue[delimeterIndex+1:len(queue)]
-    except ValueError:
-        print "* Program will exit *"
-        quit = True
+        queue = []
+os.system("clear")
