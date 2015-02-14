@@ -1,12 +1,11 @@
 #!/bin/bash
 DATE=`date +%Y-%m-%d`
 echo "Team Number,Match Number,Alliance Position,Auto Ball in Rolling Goal?,Rolling Goal in Floor Base?,Kickstand?,Drove off ramp?,Auto Ball in Center Goal?,Low Goal Trips,Middle Goal Trips,High goal Trips,Center Goal Trips,Items in parking zone,Items off floor,Tipped Goals,Blocked in end game,Notes" > compiled-data.csv
-touch python-data.csv
-for filename in ~/Documents/code/robotics-code/scouting/test-data/*.csv; do
+for filename in ~/Documents/code/robotics-code/scouting/data/*.csv; do
     if [ $DATE == $(date -r $filename +"%Y-%m-%d") ]; then
         cat $filename >> compiled-data.csv
         echo >> compiled-data.csv
-        cat >> python-data.csv
     fi
 done
-python scoutsort.py
+cp compiled-data.csv python-data.csv
+#python scoutsort.py
