@@ -108,6 +108,7 @@ while (queue != []):
 
         # Generates a list of Team objects from the list of team numbers
         teamList = []
+        blacklist = []
         for number in teamNums:
             team = Team(number)
             teamList.append(team)
@@ -117,6 +118,7 @@ while (queue != []):
                 if row[0] == team.number:
                     team.addMatch(row)
         queue.append("IDLE")
+
 
     elif nextState == "IDLE":
 
@@ -129,6 +131,8 @@ while (queue != []):
             queue.append("RANKS")
         elif command == "refresh":
             queue.append("INIT")
+        elif command == "blacklist":
+            queue.append("BLACKLIST")
         elif command == "list teams":
             queue.append("LIST")
         elif command == "help":
@@ -141,6 +145,7 @@ while (queue != []):
             raw_input("\nPress enter to continue")
             queue += "IDLE*"
 
+
     elif nextState == "RANKS":
 
         # Sorts the list of teams based on their score, highest score to lowest score
@@ -151,18 +156,19 @@ while (queue != []):
 
         # Error Handling: Does not print team rank list if the number of teams requested is greater than the number of teams present
         if reportNum <= len(teamList):
-            print "Team Number - Score"
             for i in range(0, reportNum):
-                print str(teamList[i].number) + " - " + str(teamList[i].score)
+                print "\n"
+                teamList[reportNum].getReport()
         else:
             print "Number of teams to report is greater than the number of teams present. Please try another command"
         raw_input("\nPress enter to continue")
 
         queue.append("IDLE")
 
+
     elif nextState == "REPORT":
 
-        printError = True
+        teamFound = False
 
         # Requests a team to print a statistical report on
         target = int(raw_input("Please enter the number of the team you wish to report on: "))
@@ -171,24 +177,53 @@ while (queue != []):
         for team in teamList:
             if team.number == target:
                 team.getReport()
-                printError = False
+                teamFound = True
                 break
 
         # Error Handling: If team requested does not exits in the list, no team will be reported on.
-        if printError == True:
+        if teamFound == False:
             print "Team Not found, please try another team."
         raw_input("\nPress enter to continue")
 
         queue.append("IDLE")
 
+
+    elif nextState == "BLACKLIST":
+
+        teamFound = False
+
+        # Requests the user to type a number of a team
+        blNumber = int(raw_input("Please enter the number of the team you wish to blacklist: "))
+
+        # Searches for the team requested
+        for team in teamList:
+            if team.number == blNumber:
+                # Removes team from the teamList and adds them to the blacklist
+                teamList.remove(team)
+                blacklist.append(team)
+                teamFound = True
+                break
+
+        # Error Handling: If team requested does not exist, no team will be blacklisted
+        if teamFound == False:
+            print "Team Not found, please try another team."
+            raw_input("\nPress enter to continue")
+
+        queue.append("IDLE")
+
+
     elif nextState == "LIST":
 
         # Prints a list of all teams present
-        print "Teams present:"
+        print "Teams available:"
         for team in teamList:
             print team.number
+        print "\nBlacklisted teams:"
+        for blTeam in blacklist:
+            print blTeam.number
         raw_input("\nPress enter to continue")
         queue.append("IDLE")
+
 
     elif nextState == "HELP":
 
@@ -203,6 +238,7 @@ while (queue != []):
         raw_input("Press enter to continue")
 
         queue.append("IDLE")
+
 
     elif nextState == "EXIT":
 
