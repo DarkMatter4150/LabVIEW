@@ -1,4 +1,3 @@
-Team Number,Match Number,Alliance Position,Auto Ball in Rolling Goal?,Rolling Goal in Floor Base?,Kickstand?,Drove off ramp?,Auto Ball in Center Goal?,Low Goal Trips,Middle Goal Trips,High goal Trips,Center Goal Trips,Items in parking zone,Items off floor,Tipped Goals,Blocked in end game,Notes
 6985,4,Blue Two,0,0,0,1,0,0,3,0,0,0,0,0,0,
 4272,15,Red Two,0,0,0,1,0,0,2,0,0,0,2,0,0,
 4605,10,Red Two,1,0,0,1,0,0,2,0,0,0,0,0,0,
@@ -17,7 +16,7 @@ Team Number,Match Number,Alliance Position,Auto Ball in Rolling Goal?,Rolling Go
 5972,11,Red One,0,0,0,0,1,0,0,2,0,0,3,0,0,Technical issue so auto was re-ran. Did not score the first time but did the second
 265,22,Red One,0,0,0,0,1,0,0,0,0,0,0,0,0,Chain of sweeper feel off so were unable to score in the 120 in end game
 4324,21,Red One,0,0,1,0,1,0,0,0,0,0,3,0,0,
-4324,7,Blue Two,0,0,1,0,1,0,0,0,0,0,0,0,0,froze
+4324,7,Blue Two,0,0,1,0,1,0,0,0,0,0,0,1,1,froze
 6981,9,Red One,0,0,1,0,1,0,0,0,1,2,1,0,0,scoring is a bit shaky but they are GOOD with it but only score in 120 more than filled it
 5972,22,Blue One,0,0,0,0,0,0,0,3,0,0,2,0,0,
 5972,5,Blue One,0,0,1,0,0,0,0,3,0,0,4,0,0,
@@ -55,7 +54,7 @@ Team Number,Match Number,Alliance Position,Auto Ball in Rolling Goal?,Rolling Go
 4272,11,Blue Two,0,0,0,1,0,0,0,0,0,1,1,0,0,
 4272,21,Blue One,0,0,0,0,0,0,0,0,0,0,1,0,0,stuck against a pushing robot in auto mode
 4272,6,Blue One,0,0,0,0,0,0,0,0,0,1,2,0,0,
-4324,16,Blue Two,0,0,0,1,0,0,0,0,0,0,2,1,1,tried kick stand
+4324,16,Blue Two,0,0,0,1,0,0,0,0,0,0,2,0,0,tried kick stand
 4324,3,Red One,0,0,1,0,0,0,0,0,0,0,4,0,0,barely missed center goal in auto
 4605,17,Blue Two,0,0,0,1,0,0,0,0,0,1,0,0,0,
 6116,21,(Choose),0,0,0,1,0,0,0,0,0,0,2,0,0,
@@ -87,4 +86,3 @@ Team Number,Match Number,Alliance Position,Auto Ball in Rolling Goal?,Rolling Go
 8823,17,Red Two,0,0,0,1,0,0,0,0,0,0,2,0,0,
 8823,6,Red Two,0,0,0,1,0,0,0,0,0,0,4,0,0,Tried to get 30 in auto
 8823,,Blue One,0,0,0,0,0,0,0,0,0,0,2,0,0,
-,,(Choose),0,0,0,0,0,0,0,0,0,0,0,0,0,

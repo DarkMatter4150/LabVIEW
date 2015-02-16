@@ -22,6 +22,7 @@ class Team:
         self.penaltyTippedGoals = 0
         self.penaltyBlocked = 0
         self.score = 0
+        self.notes = []
 
     def addMatch(self, matchArray):
         # Increment the number of matches a team has played
@@ -29,24 +30,27 @@ class Team:
 
         # Add statistics from match data file to attributes of a team
         # Auto stats:
-        self.autoBallScored += matchArray[2]
-        self.autoRollingGoals += matchArray[3]
-        self.autoKickstands += matchArray[4]
-        self.autoRamps += matchArray[5]
-        self.autoCenterGoals += matchArray[6]
+        self.autoBallScored += matchArray[1]
+        self.autoRollingGoals += matchArray[2]
+        self.autoKickstands += matchArray[3]
+        self.autoRamps += matchArray[4]
+        self.autoCenterGoals += matchArray[5]
         #Tele stats
-        self.tele30trips += matchArray[7]
-        self.tele60trips += matchArray[8]
-        self.tele90trips += matchArray[9]
+        self.tele30trips += matchArray[6]
+        self.tele60trips += matchArray[7]
+        self.tele90trips += matchArray[8]
         #End Game Stats
-        self.teleCenterGoals += matchArray[10]
-        self.endGameParkingZone += matchArray[11]
-        self.endGameOffFloor += matchArray[12]
+        self.teleCenterGoals += matchArray[9]
+        self.endGameParkingZone += matchArray[10]
+        self.endGameOffFloor += matchArray[11]
         #Penalties
-        self.penaltyTippedGoals += matchArray[13]
-        self.penaltyBlocked += matchArray[14]
+        self.penaltyTippedGoals += matchArray[12]
+        #self.penaltyBlocked += matchArray[13]
         #Update team's score
         self.updateScore()
+
+    def addNote(self, note):
+        self.notes.append(note)
 
     def getReport(self):
         print "==# Team: " + str(self.number) + " #=="
@@ -72,6 +76,11 @@ class Team:
         print "Total blocking penalties: " + str(self.penaltyBlocked)
         print "\n~ Team Score ~"
         print self.score
+        print "\n~Notes~"
+        print self.notes
+
+    def getNotes(self):
+        print self.notes
 
     def updateScore(self):
         self.autoScore = ((self.autoKickstands * 800) + (self.autoRamps * 200) + (self.autoCenterGoals * 1500) + (self.autoRollingGoals * 350)) / (4 * self.numOfMatches)
@@ -81,21 +90,28 @@ class Team:
         self.score = self.autoScore + self.teleScore + self.endGameScore - self.penaltyScore
 
 # Opens the file to read match data from
-file = open("python-data.csv","r")
+file = open("compiled-data2.csv","r")
 filedata = file.read()
 
 # Splits the opened CSV file into a usable 2D array
 teamNums = []
 rawData = filedata.splitlines()
 matchData = []
+noteList = []
 for row in rawData:
     row = row.rsplit(",")
-    row = [int(element) for element in row]
-
+    teamNumber = row[0]
+    matchNumber = row[1]
+    intData = [int(col) for col in row[3:15]]
+    note = row[16]
     # If a new team is found, add that team number to a list of all team numbers
     if row[0] not in teamNums:
         teamNums.append(int(row[0]))
-    matchData.append(row)
+    intData.insert(0, int(teamNumber))
+    matchData.append(intData)
+    if row[16] != '':
+        noteList.append([teamNumber, matchNumber, note])
+# print matchData
 
 #Start QSM
 queue = ["INIT"]
@@ -113,10 +129,15 @@ while (queue != []):
             team = Team(number)
             teamList.append(team)
 
-            # Searches the match data for a match that befloats to the Team
+            # Searches the match data for a match that belongs to the Team
             for row in matchData:
                 if row[0] == team.number:
                     team.addMatch(row)
+        for note in noteList:
+            print note
+            for team in teamList:
+                if note[0] == team.number:
+                    team.addNote(note)
         queue.append("IDLE")
 
 
@@ -139,6 +160,8 @@ while (queue != []):
             queue.append("HELP")
         elif command == "exit":
             queue.append("EXIT")
+        elif command == "troubleshoot":
+            queue.append("TROUBLESHOOT")
         else:
             print "Command not found, please try again."
             print "Use the `help` command for information about available commands"
@@ -229,7 +252,7 @@ while (queue != []):
 
         # Prints a list of available commands with their respective discriptions
         print "The following are a list of commands that can be used. (Reminder: commands are case-sensitive)"
-        print ""
+        print "\n"
         print "rankings - Prints a list (length determined by the user) of the teams with the highest score"
         print "report - User inputs a team number, and that team's statistics are printed"
         print "list teams - Prints a list of all the teams present"
@@ -244,5 +267,14 @@ while (queue != []):
 
         # Empties the queue so that the QSM will stop
         queue = []
+
+
+    elif nextState == "TROUBLESHOOT":
+        print matchData[20][1:]
+        print noteList[20]
+        for team in teamList:
+            print team.notes
+        raw_input("Press enter to continue")
+        queue.append("IDLE")
 
 os.system("clear")
