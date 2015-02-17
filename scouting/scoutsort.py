@@ -45,7 +45,7 @@ class Team:
         self.endGameOffFloor += matchArray[11]
         #Penalties
         self.penaltyTippedGoals += matchArray[12]
-        #self.penaltyBlocked += matchArray[13]
+        self.penaltyBlocked += matchArray[13]
         #Update team's score
         self.updateScore()
 
@@ -77,10 +77,12 @@ class Team:
         print "\n~ Team Score ~"
         print self.score
         print "\n~Notes~"
-        print self.notes
+        self.getNotes()
 
     def getNotes(self):
-        print self.notes
+        print "Match\t| Note"
+        for note in self.notes:
+            print note[1] + "\t| " + note[2]
 
     def updateScore(self):
         self.autoScore = ((self.autoKickstands * 800) + (self.autoRamps * 200) + (self.autoCenterGoals * 1500) + (self.autoRollingGoals * 350)) / (4 * self.numOfMatches)
@@ -102,7 +104,7 @@ for row in rawData:
     row = row.rsplit(",")
     teamNumber = row[0]
     matchNumber = row[1]
-    intData = [int(col) for col in row[3:15]]
+    intData = [int(col) for col in row[3:16]]
     note = row[16]
     # If a new team is found, add that team number to a list of all team numbers
     if row[0] not in teamNums:
@@ -129,15 +131,15 @@ while (queue != []):
             team = Team(number)
             teamList.append(team)
 
-            # Searches the match data for a match that belongs to the Team
+        # Searches the match data for a match that belongs to the Team
+        for team in teamList:
             for row in matchData:
                 if row[0] == team.number:
                     team.addMatch(row)
-        for note in noteList:
-            print note
-            for team in teamList:
-                if note[0] == team.number:
+            for note in noteList:
+                if note[0] == str(team.number):
                     team.addNote(note)
+
         queue.append("IDLE")
 
 
@@ -259,7 +261,6 @@ while (queue != []):
         print "exit - Exits the program"
         print ""
         raw_input("Press enter to continue")
-
         queue.append("IDLE")
 
 

@@ -91,16 +91,19 @@ matchData = []
 noteList = []
 for row in rawData:
     row = row.rsplit(",")
-
+    teamNumber = row[0]
+    matchNumber = row[1]
+    intData = [int(col) for col in row[3:16]]
+    note = row[16]
     # If a new team is found, add that team number to a list of all team numbers
+    # print row
+    # print "#"
+    # print intData
+    # print "##"
     if row[0] not in teamNums:
         teamNums.append(int(row[0]))
-    # Convert necessary elements to int type
-    intData = [int(col) for col in row[3:15]]
+    intData.insert(0, int(teamNumber))
     matchData.append(intData)
     if row[16] != '':
-        noteList.append([row[0], row[1], row[16]])
-
-print matchData
-print "\n"
-print noteList
+        noteList.append([teamNumber, matchNumber, note])
+    print noteList
