@@ -86,7 +86,7 @@ class Team:
 
     def updateScore(self):
         self.autoScore = ((self.autoKickstands * 800) + (self.autoRamps * 200) + (self.autoCenterGoals * 1500) + (self.autoRollingGoals * 350)) / (4 * self.numOfMatches)
-        self.teleScore = ((self.tele30trips * 200) + (self.tele60trips * 1200) + (self.tele90trips * 1200)) / (3 * self.numOfMatches)
+        self.teleScore = ((self.tele30trips * 200) + (self.tele60trips * 1200) + (self.tele90trips * 1300)) / (3 * self.numOfMatches)
         self.endGameScore = ((self.teleCenterGoals * 1100) + (self.endGameParkingZone * 350) + (self.endGameOffFloor * 900)) / (3 * self.numOfMatches)
         self.penaltyScore = ((self.penaltyTippedGoals * 1000) + (self.penaltyBlocked * 750)) / (2 * self.numOfMatches)
         self.score = self.autoScore + self.teleScore + self.endGameScore - self.penaltyScore
@@ -102,18 +102,18 @@ matchData = []
 noteList = []
 for row in rawData:
     row = row.rsplit(",")
-    teamNumber = row[0]
+    teamNumber = int(row[0])
     matchNumber = row[1]
     intData = [int(col) for col in row[3:16]]
     note = row[16]
     # If a new team is found, add that team number to a list of all team numbers
-    if row[0] not in teamNums:
-        teamNums.append(int(row[0]))
-    intData.insert(0, int(teamNumber))
+    if teamNumber not in teamNums:
+        teamNums.append(teamNumber)
+    intData.insert(0, teamNumber)
     matchData.append(intData)
-    if row[16] != '':
+    if note != '':
         noteList.append([teamNumber, matchNumber, note])
-# print matchData
+print teamNums
 
 #Start QSM
 queue = ["INIT"]
@@ -123,14 +123,12 @@ while (queue != []):
     nextState = queue.pop(0)
 
     if nextState == "INIT":
-
         # Generates a list of Team objects from the list of team numbers
         teamList = []
         blacklist = []
         for number in teamNums:
             team = Team(number)
             teamList.append(team)
-
         # Searches the match data for a match that belongs to the Team
         for team in teamList:
             for row in matchData:
@@ -141,7 +139,6 @@ while (queue != []):
                     team.addNote(note)
 
         queue.append("IDLE")
-
 
     elif nextState == "IDLE":
 
@@ -168,58 +165,43 @@ while (queue != []):
             print "Command not found, please try again."
             print "Use the `help` command for information about available commands"
             raw_input("\nPress enter to continue")
-            queue += "IDLE*"
-
+            queue.append("IDLE")
 
     elif nextState == "RANKS":
-
         # Sorts the list of teams based on their score, highest score to lowest score
         teamList.sort(key=lambda team: team.score, reverse=True)
-
         # Requests a number of teams to rank and prints the top X teams in order
         reportNum = int(raw_input("Please enter the number of teams to rank: "))
-
         # Error Handling: Does not print team rank list if the number of teams requested is greater than the number of teams present
         if reportNum <= len(teamList):
             for i in range(0, reportNum):
                 print "\n"
-                teamList[reportNum].getReport()
+                teamList[i].getReport()
         else:
             print "Number of teams to report is greater than the number of teams present. Please try another command"
         raw_input("\nPress enter to continue")
-
         queue.append("IDLE")
 
-
     elif nextState == "REPORT":
-
         teamFound = False
-
         # Requests a team to print a statistical report on
         target = int(raw_input("Please enter the number of the team you wish to report on: "))
-
         # Finds the team requested and prints a statistical report
         for team in teamList:
             if team.number == target:
                 team.getReport()
                 teamFound = True
                 break
-
         # Error Handling: If team requested does not exits in the list, no team will be reported on.
         if teamFound == False:
             print "Team Not found, please try another team."
         raw_input("\nPress enter to continue")
-
         queue.append("IDLE")
 
-
     elif nextState == "BLACKLIST":
-
         teamFound = False
-
         # Requests the user to type a number of a team
         blNumber = int(raw_input("Please enter the number of the team you wish to blacklist: "))
-
         # Searches for the team requested
         for team in teamList:
             if team.number == blNumber:
@@ -228,17 +210,14 @@ while (queue != []):
                 blacklist.append(team)
                 teamFound = True
                 break
-
         # Error Handling: If team requested does not exist, no team will be blacklisted
         if teamFound == False:
             print "Team Not found, please try another team."
             raw_input("\nPress enter to continue")
-
         queue.append("IDLE")
 
 
     elif nextState == "LIST":
-
         # Prints a list of all teams present
         print "Teams available:"
         for team in teamList:
@@ -251,7 +230,6 @@ while (queue != []):
 
 
     elif nextState == "HELP":
-
         # Prints a list of available commands with their respective discriptions
         print "The following are a list of commands that can be used. (Reminder: commands are case-sensitive)"
         print "\n"
@@ -265,16 +243,11 @@ while (queue != []):
 
 
     elif nextState == "EXIT":
-
         # Empties the queue so that the QSM will stop
         queue = []
 
-
     elif nextState == "TROUBLESHOOT":
-        print matchData[20][1:]
-        print noteList[20]
-        for team in teamList:
-            print team.notes
+        print teamNums
         raw_input("Press enter to continue")
         queue.append("IDLE")
 
