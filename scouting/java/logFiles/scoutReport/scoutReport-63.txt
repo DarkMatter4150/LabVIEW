@@ -1,0 +1,36 @@
+scoutReport.java
+2015-01-24 06:53:38 PM
+Program Started
+The INIT case ran
+Teams Present
+4150
+4324
+Index of `*`: 0
+nextState: 
+Remaining queue:IDLE*
+Default case reached
+Index of `*`: 4
+nextState: IDLE
+Remaining queue:EXIT*
+Please enter command:
+Printing a list of rankings
+Index of `*`: 4
+nextState: EXIT
+Remaining queue:RANKS*
+The program will exit
+Index of `*`: 5
+nextState: RANKS
+Remaining queue:
+The rankings case ran
+1) 4150
+2) 4324
+Index of `*`: 4
+nextState: EXIT
+Remaining queue:
+The program will exit
+Index of `*`: -1
+~=~
+Start Time: 06:53:38 PM
+End Time: 06:53:38 PM
+Elapsed Time (In nanoseconds): 45095547
+Elapsed Time (In seconds) : .0450955470

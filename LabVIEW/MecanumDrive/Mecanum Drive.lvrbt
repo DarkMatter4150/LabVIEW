@@ -12,23 +12,23 @@
 	</Item>
 	<Item Name="Robo_Programs" Type="Folder">
 		<Item Name="auto-ramp.vi" Type="VI" URL="../Robo_Programs/auto-ramp.vi"/>
-		<Item Name="auto_sl.vi" Type="VI" URL="../Robo_Programs/auto_sl.vi"/>
+		<Item Name="auto_ir_test_SL.vi" Type="VI" URL="../Robo_Programs/auto_ir_test_SL.vi"/>
 		<Item Name="autocenter.vi" Type="VI" URL="../Robo_Programs/autocenter.vi"/>
-		<Item Name="AutoDrive_sub.vi" Type="VI" URL="../Robo_Programs/AutoDrive_sub.vi"/>
+		<Item Name="AutoTank_sub.vi" Type="VI" URL="../Robo_Programs/AutoTank_sub.vi"/>
 		<Item Name="compass_calibrate.vi" Type="VI" URL="../Robo_Programs/compass_calibrate.vi"/>
-		<Item Name="datalogging_sub.vi" Type="VI" URL="../Robo_Programs/datalogging_sub.vi"/>
+		<Item Name="datalogging_sub.vi" Type="VI" URL="../../Serenity_mk2/SubVIs/datalogging_sub.vi"/>
 		<Item Name="lift-control.vi" Type="VI" URL="../Robo_Programs/lift-control.vi"/>
 		<Item Name="mecanum_tank_1.vi" Type="VI" URL="../Robo_Programs/mecanum_tank_1.vi"/>
-		<Item Name="mecanum_tank_1_sl.vi" Type="VI" URL="../Robo_Programs/mecanum_tank_1_sl.vi"/>
 		<Item Name="power-test.vi" Type="VI" URL="../Robo_Programs/power-test.vi"/>
 		<Item Name="practice.vi" Type="VI" URL="../Robo_Programs/practice.vi"/>
+		<Item Name="Tank.vi" Type="VI" URL="../Robo_Programs/Tank.vi"/>
 	</Item>
 	<Item Name="Robo_Schema" Type="Folder">
 		<Item Name="robo_schema.bin" Type="Document" URL="../robo_schema.bin"/>
 	</Item>
-	<Item Name="2_Button_change.vi" Type="VI" URL="../SubVIs/2_Button_change.vi"/>
+	<Item Name="2_Button_change.vi" Type="VI" URL="../../Serenity_mk2/SubVIs/2_Button_change.vi"/>
 	<Item Name="IntLibraryData" Type="LibraryData">
-		<Property Name="NI.LibData.ItemData" Type="Bin">%A#!"!!!!!%!"!"4!!%!!")!A!1!!!!#!!V!!Q!(4H6N:8*J9Q!71&amp;!!!1!!$&amp;2P='^M&lt;W&gt;Z2'&amp;U91!!!1!"!!!!(1!!!!!!!!!!</Property>
+		<Property Name="NI.LibData.ItemData" Type="Bin">%A#!"!!!!!%!"!"4!!%!!")!A!1!!!!#!!V!!Q!(4H6N:8*J9Q!71&amp;!!!1!!$&amp;2P='^M&lt;W&gt;Z2'&amp;U91!!!1!"!!!!*!!!!!!!!!!!</Property>
 		<Property Name="NI.LibData.Version" Type="Str">1.0.0.0</Property>
 	</Item>
 </Library>

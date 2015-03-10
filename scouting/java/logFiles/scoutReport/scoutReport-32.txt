@@ -1,0 +1,19 @@
+scoutReport.java
+2015-01-22 10:23:23 AM
+Program Started
+Checkpoint 1
+The init case ran
+Teams Present
+4150
+4324
+Current Queue: 
+Please enter command.
+Printing a list of rankings
+Current Queue: 
+The funciton2 case has ran
+Current Queue: 
+~=~
+Start Time: 10:23:23 AM
+End Time: 10:23:23 AM
+Elapsed Time (In nanoseconds): 48330949
+Elapsed Time (In seconds) : .0483309490

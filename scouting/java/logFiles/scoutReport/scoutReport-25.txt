@@ -1,0 +1,9 @@
+scoutReport.java
+2015-01-22 10:06:10 AM
+Program Started
+Checkpoint 1
+~=~
+Start Time: 10:06:10 AM
+End Time: 10:06:10 AM
+Elapsed Time (In nanoseconds): 44839511
+Elapsed Time (In seconds) : .0448395110

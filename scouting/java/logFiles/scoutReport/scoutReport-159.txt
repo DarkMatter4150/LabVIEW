@@ -1,0 +1,10 @@
+scoutReport.java
+2015-01-27 06:53:02 PM
+[H[2J
+[H[2J
+--> Please enter command:
+~=~
+Start Time: 06:53:02 PM
+End Time: 06:53:02 PM
+Elapsed Time (In nanoseconds): 66922450
+Elapsed Time (In seconds) : .0669224500
