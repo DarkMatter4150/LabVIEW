@@ -1,8 +1,0 @@
-sccoutReport.java
-2015-01-25 10:52:06 AM
-
-~=~
-Start Time: 10:52:06 AM
-End Time: 10:52:06 AM
-Elapsed Time (In nanoseconds): 49575441
-Elapsed Time (In seconds) : .0495754410
