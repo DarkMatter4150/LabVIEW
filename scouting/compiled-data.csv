@@ -1,90 +1,97 @@
-Team Number,Match Number,Alliance Position,Auto Ball in Rolling Goal?,Rolling Goal in Floor Base?,Kickstand?,Drove off ramp?,Auto Ball in Center Goal?,Low Goal Trips,Middle Goal Trips,High goal Trips,Center Goal Trips,Items in parking zone,Items off floor,Tipped Goals,Blocked in end game,Notes
-6985,4,Blue Two,0,0,0,1,0,0,3,0,0,0,0,0,0,
-4272,15,Red Two,0,0,0,1,0,0,2,0,0,0,2,0,0,
-4605,10,Red Two,1,0,0,1,0,0,2,0,0,0,0,0,0,
-4605,24,Red Two,1,0,0,1,0,0,2,0,0,0,0,0,0,
-6701,5,Blue Two,0,0,0,1,0,0,2,0,1,1,0,0,0,
-6977,9,Blue Two,0,0,0,1,0,0,2,0,0,0,1,0,0,
-265,3,Blue Two,0,0,0,0,1,0,1,0,1,1,0,0,0,scored in center goal auto
-265,10,Blue Two,0,0,0,0,0,0,1,0,1,0,0,0,0,
-4605,5,(Choose),0,0,0,1,0,0,1,0,0,0,0,0,0,Week fell of
-6977,16,Red Two,0,0,0,1,0,0,1,0,0,0,2,0,0,
-6977,20,Red One,0,0,0,0,0,0,1,0,0,0,2,0,0,
-6981,24,Blue One,0,0,0,1,0,0,1,0,1,2,0,0,0,
-6985,12,Red One,0,0,0,0,0,0,1,0,0,0,2,0,0,
-7974,12,Blue One,0,0,0,0,0,0,1,0,0,0,1,0,0,scoring is shaky and slowish
-7974,1,Blue One,0,0,1,1,0,0,1,0,0,0,2,0,0,Auto: tried to show in 60cm but missed.
-5972,11,Red One,0,0,0,0,1,0,0,2,0,0,3,0,0,Technical issue so auto was re-ran. Did not score the first time but did the second
-265,22,Red One,0,0,0,0,1,0,0,0,0,0,0,0,0,Chain of sweeper feel off so were unable to score in the 120 in end game
-4324,21,Red One,0,0,1,0,1,0,0,0,0,0,3,0,0,
-4324,7,Blue Two,0,0,1,0,1,0,0,0,0,0,0,0,0,froze
-6981,9,Red One,0,0,1,0,1,0,0,0,1,2,1,0,0,scoring is a bit shaky but they are GOOD with it but only score in 120 more than filled it
-5972,22,Blue One,0,0,0,0,0,0,0,3,0,0,2,0,0,
-5972,5,Blue One,0,0,1,0,0,0,0,3,0,0,4,0,0,
-5972,16,Blue One,0,0,0,0,0,0,0,2,0,0,3,0,0,
-265,18,Red One,0,0,0,0,0,0,0,1,0,0,0,0,0,Tried to score in auto 120 but were blocked
-3547,3,Blue One,0,0,0,1,0,0,0,1,0,0,2,0,0,
-4106,2,Red One,0,0,0,0,0,0,0,1,0,2,0,0,0,moved in auto but didn't do much there drop center maybe slow scoring
-4175,15,Red One,0,0,0,0,0,0,0,1,0,1,0,0,0,
-4175,19,Blue One,0,0,0,0,0,0,0,1,0,2,0,0,0,took awhile to gather balls but got 3
-6596,23,Blue One,0,0,0,0,0,0,0,1,1,2,0,0,0,tried kickstand
-6596,4,Red One,0,0,0,0,0,0,0,1,1,2,0,0,0,they missed kickstand would get in the way of our 60 auto but got three balls in 120
-6596,8,Red One,0,0,0,0,0,0,0,1,1,2,0,0,0,they tried kickstand but it didn't work they use a book to try to grab it for four balls in tall goal and 3 in center goal
-6701,14,Red One,0,0,0,0,0,0,0,1,0,0,0,0,0,
-6701,19,Red One,0,0,0,0,0,0,0,1,1,2,0,0,0,
-6981,13,Red One,0,0,0,0,0,0,0,1,2,0,0,0,1,Blocked in auto from scoring in the 120
-6981,2,Blue One,0,0,1,0,0,0,0,1,1,3,0,0,0,Auto: Was lined up to score in 120 but ball didn't come out
-3547,12,Red Two,0,0,1,1,0,0,0,0,1,0,1,0,0,
-3547,15,Blue Two,0,0,0,1,0,0,0,0,1,0,0,0,0,
-3547,20,(Choose),0,0,0,1,0,0,0,0,0,1,0,0,0,
-4106,15,Blue Two,0,0,0,1,0,0,0,0,1,0,0,0,0,
-4106,23,Red One,0,0,0,0,0,0,0,0,0,1,0,0,0,Technical difficulties were not able to run in teleop
-4106,7,Blue One,0,0,0,1,0,0,0,0,1,2,0,0,0,
-4115,11,Red Two,0,0,0,1,0,0,0,0,0,0,0,0,0,Reset and did not respond in teleop
-4115,17,Red One,0,0,0,0,0,0,0,0,1,0,0,0,0,
-4115,2,Blue Two,0,0,0,1,0,0,0,0,0,2,0,0,0,has the capability to score in the 120
-4116,13,Blue One,0,0,0,0,0,0,0,0,0,0,1,0,0,tried kickstand
-4116,5,Red One,0,0,0,0,0,0,0,0,0,0,0,0,0,ran into Robohackers in auto couldn't get up ramp in end game
-4116,8,(Choose),0,0,0,0,0,0,0,0,0,1,0,0,0,auto malfunction
-4175,2,Red Two,0,0,0,0,0,0,0,0,0,0,0,0,0,No auto died just after teleop started
-4175,8,Blue One,0,0,0,0,0,0,0,0,0,0,0,0,0,
-4267,10,Red One,0,0,0,0,0,0,0,0,0,0,3,0,0,couldn't get kickstand drove up on it couldn't drive up ramp with goal very easily
-4267,13,(Choose),0,0,0,1,0,0,0,0,0,0,3,0,0,
-4267,19,Blue Two,0,0,0,1,0,0,0,0,0,0,2,0,0,
-4267,6,Blue Two,0,0,0,0,0,0,0,0,0,0,1,0,0,
-4272,11,Blue Two,0,0,0,1,0,0,0,0,0,1,1,0,0,
-4272,21,Blue One,0,0,0,0,0,0,0,0,0,0,1,0,0,stuck against a pushing robot in auto mode
-4272,6,Blue One,0,0,0,0,0,0,0,0,0,1,2,0,0,
-4324,16,Blue Two,0,0,0,1,0,0,0,0,0,0,2,1,1,tried kick stand
-4324,3,Red One,0,0,1,0,0,0,0,0,0,0,4,0,0,barely missed center goal in auto
-4605,17,Blue Two,0,0,0,1,0,0,0,0,0,1,0,0,0,
-6116,21,(Choose),0,0,0,1,0,0,0,0,0,0,2,0,0,
-6596,17,Blue One,0,0,0,0,0,0,0,0,0,0,0,0,0,tried kickstand dragged goal around
-6701,9,Blue One,0,0,0,0,0,0,0,0,0,0,0,0,0,
-6806,10,Blue One,0,0,0,0,0,0,0,0,0,0,1,1,0,
-6806,15,Blue One,0,0,1,0,0,0,0,0,0,0,2,0,0,spent whole time trying to gert one goal up
-6806,1,Blue Two,0,0,0,0,0,0,0,0,0,0,2,0,0,has no ground auto and can push goals
-6806,23,Red Two,0,0,0,1,0,0,0,0,0,0,4,0,0,
-6914,13,Blue Two,0,0,0,0,0,0,0,0,0,0,1,1,0,no auto
-6914,22,(Choose),0,0,0,1,0,0,0,0,0,0,0,0,0,Sat in front of the center goal
-6914,4,Red Two,0,0,0,1,0,0,0,0,0,0,3,0,0,
-6914,7,Red One,0,0,0,0,0,0,0,0,0,0,1,0,0,almost fell off ramp and did knock goal off ramp
-6977,4,Blue One,0,0,0,0,0,0,0,0,0,0,2,0,0,Could not score by themselves so they lined a goal up for their partner
-7974,16,Red One,0,0,0,0,0,0,0,0,0,0,1,0,0,
-7974,19,Red Two,0,0,0,1,0,0,0,0,0,0,0,0,0,Died
-7979,14,Red Two,0,0,0,0,0,0,0,0,0,0,2,1,0,No auto
-7979,1,Red One,0,0,0,0,0,0,0,0,0,0,0,0,0,no auto used if any did not do much
-7979,20,Blue Two,0,0,0,0,0,0,0,0,0,0,1,0,0,
-8042,18,Red Two,0,0,0,0,0,0,0,0,0,0,0,0,0, Did not run
-8042,23,Blue Two,0,0,0,0,0,0,0,0,0,0,1,0,0,no auto or teleop or end game
-8042,6,Red One,0,0,0,0,0,0,0,0,0,0,0,0,0,no auto tried to score balls but never got any in a goal
-8042,9,(Choose),0,0,0,1,0,0,0,0,0,0,0,0,0,Died
-8680,11,Blue One,0,0,0,0,0,0,0,0,0,1,1,0,0,
-8680,15,Blue One,0,0,0,0,0,0,0,0,0,2,0,0,0,no auto
-8680,24,(Choose),0,0,0,0,0,0,0,0,0,0,2,0,0,
-8680,3,Red Two,0,0,0,0,0,0,0,0,0,0,0,0,0,No auto broke
-8823,12,(Choose),0,0,0,1,0,0,0,0,0,0,4,0,0,pushed against a robot and drove back up the ramp and fell off
-8823,17,Red Two,0,0,0,1,0,0,0,0,0,0,2,0,0,
-8823,6,Red Two,0,0,0,1,0,0,0,0,0,0,4,0,0,Tried to get 30 in auto
-8823,,Blue One,0,0,0,0,0,0,0,0,0,0,2,0,0,
-,,(Choose),0,0,0,0,0,0,0,0,0,0,0,0,0,
+12388,13,Red One,0,0,0,0,0,0,1,0,0,0,2,0,0,Started on ground. Auto. Tried to knock down the kickstand. Teleop. Scored in middle goal. 
+12388,22,Blue Two,0,0,0,0,0,1,0,0,0,1,0,0,0,attempted kickstand no work. quick lift semi accurate
+12388,5,Blue One,0,0,0,1,0,0,0,0,0,0,2,0,0,Didn't score any balls
+12388,9,Red One,0,0,0,1,0,0,1,1,0,0,2,0,0,Started on the ramp. Auto. Maybe off the ramp. Teleop. Scored often. End. Had a little trouble getting up the ramp 
+3788,11,Blue Two,0,0,0,0,0,0,1,0,1,0,0,0,0,auto did not work. don't know what was attempted.slow lift.
+3788,19,Red One,0,0,0,0,0,0,0,3,0,1,0,0,0,Started on the ground. Auto. Defensive auto made to block opposing robot from scoring in the 60 goal. Teleop. Scored consistantly. End. 
+3788,5,Red One,0,0,0,1,0,0,3,0,1,1,0,0,0,Starts on the ramp. Got three big ballsnin the center goal
+4150,1,Red One,0,0,0,1,0,0,0,3,1,0,0,0,0,Started on the ramp. Missed the goal and drove on the corner if the ramp. Teleop. Missed the high goal but scored in it two other times. Scored three in the middle goal during end game
+4150,21,Red One,0,0,0,0,1,0,0,3,1,1,0,0,0,Started on the ground. Auto. Successful 120 auto! Teleop. Scored in 90. End. Filled 120 goal.
+4150,26,Red One,1,0,0,1,0,0,0,0,0,0,2,0,0,we seemed to have trouble scoring
+4177,18,Red One,1,0,0,1,0,0,1,0,0,0,2,0,0,
+4177,24,Red One,0,0,0,0,0,0,1,0,0,0,3,1,0,On the ground. Auto. No auto. End. Knocked down their own goal.
+4177,3,Blue One,0,0,0,1,0,0,1,0,0,0,3,0,0,Missed 120 in auto and slow scoring. They could then get two goals and themselves up the ramp
+4177,7,Blue Two,0,0,0,0,0,0,1,0,0,0,1,0,0,auto attempted to kickstand and drag s goal to f base did not work. missed three balls attempting a trip on m goal.
+4324,24,Blue Two,0,0,0,0,0,0,0,2,0,0,0,0,0,auto stopped mid lift attempted cenre goal. trouble collecting corner balls slow collection delay until bucket released.
+4324,2,Red One,0,0,0,0,0,0,0,0,0,0,0,0,0,Auto. Did not work. Teleop. Collected balls and got stuck on the kickstand. End. Tries to go up the ramp 
+4324,9,Red Two,0,0,0,0,0,0,1,0,0,1,0,0,0,aimed for center but was pushed away still probably still need some work
+4324,,Red Two,0,0,0,0,0,0,0,0,0,0,1,0,0,Ran into center in auto. didn't score balls
+5126,16,Blue Two,0,0,0,0,0,0,0,0,0,0,0,0,0,no auto. collecting few balls. auto lift tube thing.
+5126,1,Red Two,0,0,0,0,0,0,0,0,0,2,0,0,0,
+5126,23,Blue Two,0,0,1,0,0,0,1,0,0,1,0,0,0,lift not efficient due to auto lift.
+5126,7,Red One,0,0,0,0,0,0,0,0,0,0,0,0,0,Started on the ground. Auto. Went forward and spun around. Straifing capabilities.
+5340,11,Blue One,0,0,0,1,0,0,0,1,0,1,0,0,0,Missed 60 in auto. Not good scoring.
+5340,24,Red One,1,0,0,1,0,0,0,0,1,0,0,1,0,
+5340,6,Red One,1,1,0,1,0,0,0,3,1,0,0,1,0,Started on the ramp. Scored in there middle goal. Scored in the 120 goal but got a penelty 
+5340,,Blue One,0,0,0,1,0,0,0,0,0,1,0,0,0,Arm broke. It practically snapped in half.
+5588,21,Red One,1,0,0,0,0,0,0,0,0,0,3,0,0,
+5695,14,Red Two,0,0,0,0,0,0,0,0,0,0,1,0,0,raise slowly and missed
+5985,13,Red One,1,0,0,1,0,0,1,4,1,2,0,0,0,
+5975,14,Red One,0,0,0,0,0,0,0,2,0,0,0,0,0,Tried to score in center goal in auto. Slow driving and took several seconds t to line up with goal. 6 large balls in 90 cm goal.
+5975,19,Blue Two,0,0,0,0,0,0,0,3,0,1,0,0,0,missed center not close miss placed. has an auto lift. got tall goalin fbase.
+5975,3,Red Two,0,0,0,0,0,0,0,1,0,1,0,0,0,missed center auto
+5975,8,Red One,0,0,0,0,0,0,4,0,0,2,0,0,0,Started on the ground. Auto. Tried to score in the 120? Teleop. Very inconsistent scoring and bucket.
+5985,19,Red One,0,0,0,1,0,0,2,0,0,1,0,0,0,filled medium goal
+5985,25,Blue One,1,0,0,1,0,0,0,4,0,2,0,0,0,Goal grabber seemed weakish. REALLY GOOD AT FILLING 90.
+5985,9,Blue One,1,0,0,1,0,0,1,0,0,0,2,0,0,Scoring wasnt quite consistent
+5986,4,Red One,0,0,0,1,0,0,0,2,1,0,0,0,0,Started on rsmp . scored in the middle goal  good 90 filling and can score in the 120 cm goal
+6041,17,Blue One,0,1,0,1,0,0,2,0,0,0,0,1,0,Scoring is a bit sketch or shaky or bumpy. They tipped over their half full 90 going up the ramp.
+6121,11,Red One,0,0,0,1,0,0,0,2,1,0,0,0,0,Started on ramp . auto. Drove off ramp. Teleop. Got balls stuck under them. End. Completely filled center goal.
+6121,17,Blue Two,0,0,0,0,0,0,0,3,0,0,0,0,0,auto just went strait. sweeper had trouble missed b some balls. most balls made goal some no
+6121,21,Blue Two,0,0,0,0,0,0,1,0,1,1,0,0,0,auto went stair and stopped. fairly accurate bucket not perfect but accurate.
+6121,25,Red One,0,0,0,1,0,0,0,1,1,0,0,0,0,Started on the ramp. Auto. Drove off ramp. Tele . collected and scored in 90. End. Almost filled the center goal.
+6121,2,Red One,0,0,0,1,0,0,0,2,1,0,0,0,0,could not see most of auto scored 8 in high goal 3 in center
+6365,10,Blue One,0,0,0,1,0,0,0,2,0,1,0,0,0,Goal grabber seemed flimsy
+6365,23,Red One,0,0,0,1,0,0,0,0,0,0,0,0,0,could not see the first half and their lift broke in end game
+6365,4,Red Two,0,0,0,0,0,0,0,0,0,0,3,0,0,was taking a long tome to pick up balls
+6458,13,Blue Two,0,0,0,0,0,0,0,1,0,0,1,0,0,no auto. almost knocked down m goal after it took it out of f base. maneuverable
+6458,1,Red One,0,0,0,0,0,0,0,1,0,2,0,0,0,not much auto
+6458,20,Red One,0,0,1,0,0,0,0,1,1,0,0,0,0,Started on the ground. Auto. Kickstand. Teleop. Scissor lift. End. Scored in the 120 goal.v
+6458,8,Blue Two,0,0,1,0,0,0,2,0,0,1,0,0,0,nothing after it kicked kickstand blocks path of our auto. slow lifr. can't get up ramp. almost knocked large goal when pushing up ramp.
+6546,12,Red One,1,0,0,1,0,0,0,4,0,1,1,0,0,Started on the ramp. Auto. Scored in the middlengoal. Teleop. Scored well in the 90 cm goal. 
+6546,17,Red One,0,0,0,0,0,0,0,3,0,0,0,0,0,broke down for auto power cycle worked 
+6546,21,Blue One,0,0,0,1,0,0,0,3,1,0,1,0,0,Scored a lot
+6546,6,Blue One,0,0,0,1,0,0,0,0,0,0,1,0,0,Dropped ball as soon as they got down the ramp. Picked up balls quickly but couldn't score then well if ever.
+6691,20,Blue Two,0,0,0,0,0,0,0,0,0,1,0,0,0,didnt lift ball in auto. had trouble with lift. returned to base halfway through.
+6691,26,Red One,0,0,0,0,0,0,2,0,1,2,0,0,0,Started on the ground. Auto. Ran into 4150. Teleop. Filled then 60 cm goal. End. Almost filled center goal.
+6691,5,Blue Two,0,0,0,0,0,0,1,0,0,0,0,0,0,almost got small tube in floor in auto. battery issue caused robot to shut down
+6691,9,Blue Two,1,0,0,0,0,0,0,1,1,0,0,0,0,scored in s goal missed kicksrtand and didn't return to f baw. fast lift. almost knocked over m goal by pushing it up a blocked ramp.
+7123,12,Blue Two,0,0,0,0,1,0,0,0,1,0,1,0,0,problem with lift almost didn't get center . got kickstand rele. missed tall goal slow lift. doesn't focus on small balls. ended on ramp.
+7123,16,Red One,0,0,0,0,0,0,0,2,1,0,0,0,0,Missed auto due to a mistake. Teleop scored in the high. End. Filled the center goal
+7123,20,Red One,1,0,0,1,0,0,0,1,0,2,2,0,0,2 balls in auto medium goal 3 in center maybe penalty
+7123,25,Red Two,0,0,0,0,0,0,2,0,0,1,2,0,0,
+7123,3,Blue Two,0,0,0,0,1,0,0,1,1,0,0,0,0,
+7229,11,Red Two,0,0,0,0,0,0,1,0,1,0,1,0,0,just keep wobbling whentrying the center in auto but filled it in end game
+7229,18,Red One,0,0,0,0,0,0,0,1,1,0,0,0,0,Started on the ground. Auto. Tried to score in the center goal but was way to far back. Teleop. Very innconsittant bucket and sweeper. End. Got one ball in the center goal. 
+7229,1,Blue One,1,1,1,0,0,0,2,0,0,0,2,0,0,Auto seemed to work quite well and consistent
+7229,22,Red One,0,0,0,1,0,0,0,3,1,1,0,0,0,Started on the ramp. Auto. Tried to score in the 60. Teleop. Scored in the 90.
+7332,10,Red One,0,0,0,0,0,2,0,0,0,0,2,0,0,Starting on then ground. Auto. Hit another robot and was not able to perform its auto. Teleop. Missed the small goal. End. Had to push a robot out of the way to get to the ramp.
+7332,16,Blue Two,1,0,0,0,0,1,0,0,0,1,0,0,0,scored then did nothing.  collected very few balls flipped attempting ramp.
+7332,19,Red One,0,0,0,1,0,0,0,0,0,0,0,0,0,Auto ran into robot of other alliance. Was blocked by partner. Did nothing but attempt to go up ramp.
+7332,25,Blue Two,0,0,0,0,0,0,0,0,0,1,2,0,0,missed small goal in auto trouble collecting balls
+7332,6,Red Two,0,0,0,0,0,0,2,0,0,0,0,0,0,missed small goal in auto.  fell over
+7529,12,Red Two,0,0,0,0,0,0,0,0,0,0,2,0,0,shaky lift missed the tubes
+7529,18,Blue One,0,0,0,0,0,0,0,0,0,0,0,0,0,Slow scoring and ball fell out of the back
+7529,26,Blue Two,0,0,0,0,0,0,0,0,0,0,2,0,0,attempted kickstand no ork. slow lift.
+7529,4,Blue One,0,0,0,1,0,0,0,0,0,0,0,0,0,Missed 60cm goal on auto by allot. Lift was very slow and shaky. They couldn't put it down at the end of the match.
+7529,,Red Two,0,0,0,0,0,0,0,0,0,0,3,0,0,hit post did not knock it over no Teleop ball scoring this round 
+7805,10,Red One,1,0,0,1,0,0,1,0,0,0,1,0,0,
+7805,16,Red One,1,0,0,1,0,0,1,0,0,0,0,0,0,could not see part of the match
+7805,20,Blue One,0,0,0,1,0,0,0,0,0,0,0,0,0,Didn't drop the ball in auto. Tipped over on the ramp. Landed halfway off
+7805,26,Blue One,1,0,0,1,0,0,1,0,0,0,1,0,0,Pretty good auto but not good teleop. slipped off ramp. Kept goal up.
+7805,2,Blue One,1,0,0,1,0,0,0,0,0,0,0,0,0,Touched top of 60cm goal. Were on the ramp but slipped off
+8588,14,Blue One,0,1,0,1,0,0,0,0,0,0,1,0,0,Didn't grab all the goals in auto. almost tipped goal off ramp. It was half off the ramp.
+8588,3,Red One,0,0,0,1,0,0,0,0,0,0,1,0,0,Started on ramp. Scored in two goals and dragged all three goals but got stuck on the ramp. Teleop. Stuck on the ramp. End. Their partner pushed them up the ramp cause they were stuck. 
+8588,7,Blue One,0,0,0,1,0,0,0,0,0,0,4,0,0,Did no ball scoring
+8627,4,Blue Two,0,0,0,0,0,0,0,0,0,0,1,0,0,auto did not work attempted to kick kickstand very slow lift
+8672,17,Red One,0,0,0,0,0,0,0,0,1,0,0,0,0,Started on the ground. Auto. Tried to knock down the kick stand but just rammed the center goal. Teleop. Onlymcollected balls. End. Filled the 120. 
+8672,8,Red One,1,0,0,0,0,0,0,0,1,1,1,0,0,hit partner in auto causing them to miss 4in center
+8695,22,Blue One,0,0,0,0,0,0,1,0,0,0,0,0,0,Slow and inefficient scoring. slipped off ramp
+8695,2,Blue Two,0,0,0,0,0,0,0,0,0,0,1,0,0,no auto
+8801,12,Blue One,0,0,0,1,0,0,0,0,0,0,0,0,0,Scoring was not good comparably
+8801,18,Blue Two,0,0,0,0,0,0,0,0,0,0,0,0,0,slow life missed center in auto. got kick in tele. did not collect any balls.
+8801,23,Red One,0,0,0,0,0,0,0,0,0,0,0,0,0,Started on the ground. Auto. Tried to score in the 120 but got knocked out of the way. Teleop.
+8801,6,Blue Two,0,0,0,0,0,0,0,0,0,1,0,0,0,no auto. got small goal in f base and stopped. only operated lift once
+9041,10,Blue Two,0,0,0,0,0,0,0,2,0,0,0,0,0,was blocked by other bnot.in auto. slow innefective grabber
+9041,23,Blue One,0,0,0,1,0,0,0,0,0,0,2,0,0,Grabbed a goal in auto
+9041,5,Red Two,0,0,0,0,0,0,2,0,0,1,0,0,0,could not see the match very well

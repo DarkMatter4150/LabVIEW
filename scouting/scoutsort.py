@@ -92,7 +92,7 @@ class Team:
         self.score = self.autoScore + self.teleScore + self.endGameScore - self.penaltyScore
 
 # Opens the file to read match data from
-file = open("compiled-data2.csv","r")
+file = open("compiled-data.csv","r")
 filedata = file.read()
 
 # Splits the opened CSV file into a usable 2D array
@@ -113,7 +113,6 @@ for row in rawData:
     matchData.append(intData)
     if note != '':
         noteList.append([teamNumber, matchNumber, note])
-print teamNums
 
 #Start QSM
 queue = ["INIT"]
@@ -135,9 +134,8 @@ while (queue != []):
                 if row[0] == team.number:
                     team.addMatch(row)
             for note in noteList:
-                if note[0] == str(team.number):
+                if note[0] == team.number:
                     team.addNote(note)
-
         queue.append("IDLE")
 
     elif nextState == "IDLE":

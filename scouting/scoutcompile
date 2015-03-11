@@ -8,4 +8,4 @@ for filename in ~/Documents/code/robotics-code/scouting/data/*.csv; do
     fi
 done
 cp compiled-data.csv python-data.csv
-python scoutsort.py
+# python scoutsort.py
