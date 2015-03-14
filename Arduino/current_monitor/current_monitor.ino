@@ -9,6 +9,9 @@ int greenPin = 10;
 int bluePin = 11;
 int led = 13;
 
+float current = 0;
+float voltage = 0;
+
 void setup(void) {
   uint32_t currentFrequency;
   Serial.begin(9600);
@@ -22,10 +25,14 @@ void setup(void) {
 }
 
 void loop(void) {
+  current = 0;
+  voltage = 0;
   
-  float current = 0;
   current = ina219.getCurrent_mA();
+  voltage = ina219.getBustVoltage_V();
   // Serial.print("Current Draw (mA): ");
+  Serial.print(voltage);
+  Serial.print("\t");
   Serial.println(current);
   
   if (current >= 2000) {
@@ -42,6 +49,8 @@ void loop(void) {
     digitalWrite(bluePin, HIGH);
     digitalWrite(led, LOW);
   }
+  
+  delay(500);
   
 }
 
