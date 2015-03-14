@@ -7,39 +7,41 @@ Adafruit_INA219 ina219;
 int redPin = 9;
 int greenPin = 10;
 int bluePin = 11;
+int led = 13;
 
-void setup(void) 
-{
+void setup(void) {
   uint32_t currentFrequency;
-
-  Serial.begin(115200);
-  Serial.println("Hello!");
-
+  Serial.begin(9600);
+  // Serial.println("Hello!");
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  pinMode(led, OUTPUT);
   Serial.println("Measuring voltage and current with INA219 ...");
   ina219.begin();
 }
 
-void loop(void) 
-{
+void loop(void) {
+  
   float current = 0;
-
   current = ina219.getCurrent_mA();
-
-  if (current >= 1000)
-  {
+  // Serial.print("Current Draw (mA): ");
+  Serial.println(current);
+  
+  if (current >= 2000) {
     /*LEDs Red*/
     digitalWrite(redPin, HIGH);
     digitalWrite(greenPin, LOW);
     digitalWrite(bluePin, LOW);
-    delay(3000);
-  }
-  else
-  {
+    digitalWrite(led, HIGH);
+    // delay(3000);
+  } else {
     /*LEDs Purple*/
     digitalWrite(redPin, HIGH);
     digitalWrite(greenPin, LOW);
     digitalWrite(bluePin, HIGH);
+    digitalWrite(led, LOW);
   }
-
+  
 }
 
