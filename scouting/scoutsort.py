@@ -92,7 +92,11 @@ class Team:
         self.score = self.autoScore + self.teleScore + self.endGameScore - self.penaltyScore
 
 # Opens the file to read match data from
+<<<<<<< HEAD
 file = open("compiled-data.csv","r")
+=======
+file = open("compiled-data2.csv","r")
+>>>>>>> a444cb51be6f5f0f4f1897be0cb759335351517a
 filedata = file.read()
 
 # Splits the opened CSV file into a usable 2D array
@@ -113,6 +117,10 @@ for row in rawData:
     matchData.append(intData)
     if note != '':
         noteList.append([teamNumber, matchNumber, note])
+<<<<<<< HEAD
+=======
+print teamNums
+>>>>>>> a444cb51be6f5f0f4f1897be0cb759335351517a
 
 #Start QSM
 queue = ["INIT"]
@@ -134,8 +142,14 @@ while (queue != []):
                 if row[0] == team.number:
                     team.addMatch(row)
             for note in noteList:
+<<<<<<< HEAD
                 if note[0] == team.number:
                     team.addNote(note)
+=======
+                if note[0] == str(team.number):
+                    team.addNote(note)
+
+>>>>>>> a444cb51be6f5f0f4f1897be0cb759335351517a
         queue.append("IDLE")
 
     elif nextState == "IDLE":
@@ -249,4 +263,8 @@ while (queue != []):
         raw_input("Press enter to continue")
         queue.append("IDLE")
 
+<<<<<<< HEAD
 os.system("clear")
+=======
+os.system("clear")
+>>>>>>> a444cb51be6f5f0f4f1897be0cb759335351517a

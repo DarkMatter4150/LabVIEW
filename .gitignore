@@ -1,0 +1,5 @@
+# Scouting Specific
+*.csv
+
+# Cloud9 files
+.c9/

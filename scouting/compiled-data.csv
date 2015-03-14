@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 12388,13,Red One,0,0,0,0,0,0,1,0,0,0,2,0,0,Started on ground. Auto. Tried to knock down the kickstand. Teleop. Scored in middle goal. 
 12388,22,Blue Two,0,0,0,0,0,1,0,0,0,1,0,0,0,attempted kickstand no work. quick lift semi accurate
 12388,5,Blue One,0,0,0,1,0,0,0,0,0,0,2,0,0,Didn't score any balls
@@ -95,3 +96,95 @@
 9041,10,Blue Two,0,0,0,0,0,0,0,2,0,0,0,0,0,was blocked by other bnot.in auto. slow innefective grabber
 9041,23,Blue One,0,0,0,1,0,0,0,0,0,0,2,0,0,Grabbed a goal in auto
 9041,5,Red Two,0,0,0,0,0,0,2,0,0,1,0,0,0,could not see the match very well
+=======
+Team Number,Match Number,Alliance Position,Auto Ball in Rolling Goal?,Rolling Goal in Floor Base?,Kickstand?,Drove off ramp?,Auto Ball in Center Goal?,Low Goal Trips,Middle Goal Trips,High goal Trips,Center Goal Trips,Items in parking zone,Items off floor,Tipped Goals,Blocked in end game,Notes
+6985,4,Blue Two,0,0,0,1,0,0,3,0,0,0,0,0,0,
+4272,15,Red Two,0,0,0,1,0,0,2,0,0,0,2,0,0,
+4605,10,Red Two,1,0,0,1,0,0,2,0,0,0,0,0,0,
+4605,24,Red Two,1,0,0,1,0,0,2,0,0,0,0,0,0,
+6701,5,Blue Two,0,0,0,1,0,0,2,0,1,1,0,0,0,
+6977,9,Blue Two,0,0,0,1,0,0,2,0,0,0,1,0,0,
+265,3,Blue Two,0,0,0,0,1,0,1,0,1,1,0,0,0,scored in center goal auto
+265,10,Blue Two,0,0,0,0,0,0,1,0,1,0,0,0,0,
+4605,5,(Choose),0,0,0,1,0,0,1,0,0,0,0,0,0,Week fell of
+6977,16,Red Two,0,0,0,1,0,0,1,0,0,0,2,0,0,
+6977,20,Red One,0,0,0,0,0,0,1,0,0,0,2,0,0,
+6981,24,Blue One,0,0,0,1,0,0,1,0,1,2,0,0,0,
+6985,12,Red One,0,0,0,0,0,0,1,0,0,0,2,0,0,
+7974,12,Blue One,0,0,0,0,0,0,1,0,0,0,1,0,0,scoring is shaky and slowish
+7974,1,Blue One,0,0,1,1,0,0,1,0,0,0,2,0,0,Auto: tried to show in 60cm but missed.
+5972,11,Red One,0,0,0,0,1,0,0,2,0,0,3,0,0,Technical issue so auto was re-ran. Did not score the first time but did the second
+265,22,Red One,0,0,0,0,1,0,0,0,0,0,0,0,0,Chain of sweeper feel off so were unable to score in the 120 in end game
+4324,21,Red One,0,0,1,0,1,0,0,0,0,0,3,0,0,
+4324,7,Blue Two,0,0,1,0,1,0,0,0,0,0,0,0,0,froze
+6981,9,Red One,0,0,1,0,1,0,0,0,1,2,1,0,0,scoring is a bit shaky but they are GOOD with it but only score in 120 more than filled it
+5972,22,Blue One,0,0,0,0,0,0,0,3,0,0,2,0,0,
+5972,5,Blue One,0,0,1,0,0,0,0,3,0,0,4,0,0,
+5972,16,Blue One,0,0,0,0,0,0,0,2,0,0,3,0,0,
+265,18,Red One,0,0,0,0,0,0,0,1,0,0,0,0,0,Tried to score in auto 120 but were blocked
+3547,3,Blue One,0,0,0,1,0,0,0,1,0,0,2,0,0,
+4106,2,Red One,0,0,0,0,0,0,0,1,0,2,0,0,0,moved in auto but didn't do much there drop center maybe slow scoring
+4175,15,Red One,0,0,0,0,0,0,0,1,0,1,0,0,0,
+4175,19,Blue One,0,0,0,0,0,0,0,1,0,2,0,0,0,took awhile to gather balls but got 3
+6596,23,Blue One,0,0,0,0,0,0,0,1,1,2,0,0,0,tried kickstand
+6596,4,Red One,0,0,0,0,0,0,0,1,1,2,0,0,0,they missed kickstand would get in the way of our 60 auto but got three balls in 120
+6596,8,Red One,0,0,0,0,0,0,0,1,1,2,0,0,0,they tried kickstand but it didn't work they use a book to try to grab it for four balls in tall goal and 3 in center goal
+6701,14,Red One,0,0,0,0,0,0,0,1,0,0,0,0,0,
+6701,19,Red One,0,0,0,0,0,0,0,1,1,2,0,0,0,
+6981,13,Red One,0,0,0,0,0,0,0,1,2,0,0,0,1,Blocked in auto from scoring in the 120
+6981,2,Blue One,0,0,1,0,0,0,0,1,1,3,0,0,0,Auto: Was lined up to score in 120 but ball didn't come out
+3547,12,Red Two,0,0,1,1,0,0,0,0,1,0,1,0,0,
+3547,15,Blue Two,0,0,0,1,0,0,0,0,1,0,0,0,0,
+3547,20,(Choose),0,0,0,1,0,0,0,0,0,1,0,0,0,
+4106,15,Blue Two,0,0,0,1,0,0,0,0,1,0,0,0,0,
+4106,23,Red One,0,0,0,0,0,0,0,0,0,1,0,0,0,Technical difficulties were not able to run in teleop
+4106,7,Blue One,0,0,0,1,0,0,0,0,1,2,0,0,0,
+4115,11,Red Two,0,0,0,1,0,0,0,0,0,0,0,0,0,Reset and did not respond in teleop
+4115,17,Red One,0,0,0,0,0,0,0,0,1,0,0,0,0,
+4115,2,Blue Two,0,0,0,1,0,0,0,0,0,2,0,0,0,has the capability to score in the 120
+4116,13,Blue One,0,0,0,0,0,0,0,0,0,0,1,0,0,tried kickstand
+4116,5,Red One,0,0,0,0,0,0,0,0,0,0,0,0,0,ran into Robohackers in auto couldn't get up ramp in end game
+4116,8,(Choose),0,0,0,0,0,0,0,0,0,1,0,0,0,auto malfunction
+4175,2,Red Two,0,0,0,0,0,0,0,0,0,0,0,0,0,No auto died just after teleop started
+4175,8,Blue One,0,0,0,0,0,0,0,0,0,0,0,0,0,
+4267,10,Red One,0,0,0,0,0,0,0,0,0,0,3,0,0,couldn't get kickstand drove up on it couldn't drive up ramp with goal very easily
+4267,13,(Choose),0,0,0,1,0,0,0,0,0,0,3,0,0,
+4267,19,Blue Two,0,0,0,1,0,0,0,0,0,0,2,0,0,
+4267,6,Blue Two,0,0,0,0,0,0,0,0,0,0,1,0,0,
+4272,11,Blue Two,0,0,0,1,0,0,0,0,0,1,1,0,0,
+4272,21,Blue One,0,0,0,0,0,0,0,0,0,0,1,0,0,stuck against a pushing robot in auto mode
+4272,6,Blue One,0,0,0,0,0,0,0,0,0,1,2,0,0,
+4324,16,Blue Two,0,0,0,1,0,0,0,0,0,0,2,1,1,tried kick stand
+4324,3,Red One,0,0,1,0,0,0,0,0,0,0,4,0,0,barely missed center goal in auto
+4605,17,Blue Two,0,0,0,1,0,0,0,0,0,1,0,0,0,
+6116,21,(Choose),0,0,0,1,0,0,0,0,0,0,2,0,0,
+6596,17,Blue One,0,0,0,0,0,0,0,0,0,0,0,0,0,tried kickstand dragged goal around
+6701,9,Blue One,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6806,10,Blue One,0,0,0,0,0,0,0,0,0,0,1,1,0,
+6806,15,Blue One,0,0,1,0,0,0,0,0,0,0,2,0,0,spent whole time trying to gert one goal up
+6806,1,Blue Two,0,0,0,0,0,0,0,0,0,0,2,0,0,has no ground auto and can push goals
+6806,23,Red Two,0,0,0,1,0,0,0,0,0,0,4,0,0,
+6914,13,Blue Two,0,0,0,0,0,0,0,0,0,0,1,1,0,no auto
+6914,22,(Choose),0,0,0,1,0,0,0,0,0,0,0,0,0,Sat in front of the center goal
+6914,4,Red Two,0,0,0,1,0,0,0,0,0,0,3,0,0,
+6914,7,Red One,0,0,0,0,0,0,0,0,0,0,1,0,0,almost fell off ramp and did knock goal off ramp
+6977,4,Blue One,0,0,0,0,0,0,0,0,0,0,2,0,0,Could not score by themselves so they lined a goal up for their partner
+7974,16,Red One,0,0,0,0,0,0,0,0,0,0,1,0,0,
+7974,19,Red Two,0,0,0,1,0,0,0,0,0,0,0,0,0,Died
+7979,14,Red Two,0,0,0,0,0,0,0,0,0,0,2,1,0,No auto
+7979,1,Red One,0,0,0,0,0,0,0,0,0,0,0,0,0,no auto used if any did not do much
+7979,20,Blue Two,0,0,0,0,0,0,0,0,0,0,1,0,0,
+8042,18,Red Two,0,0,0,0,0,0,0,0,0,0,0,0,0, Did not run
+8042,23,Blue Two,0,0,0,0,0,0,0,0,0,0,1,0,0,no auto or teleop or end game
+8042,6,Red One,0,0,0,0,0,0,0,0,0,0,0,0,0,no auto tried to score balls but never got any in a goal
+8042,9,(Choose),0,0,0,1,0,0,0,0,0,0,0,0,0,Died
+8680,11,Blue One,0,0,0,0,0,0,0,0,0,1,1,0,0,
+8680,15,Blue One,0,0,0,0,0,0,0,0,0,2,0,0,0,no auto
+8680,24,(Choose),0,0,0,0,0,0,0,0,0,0,2,0,0,
+8680,3,Red Two,0,0,0,0,0,0,0,0,0,0,0,0,0,No auto broke
+8823,12,(Choose),0,0,0,1,0,0,0,0,0,0,4,0,0,pushed against a robot and drove back up the ramp and fell off
+8823,17,Red Two,0,0,0,1,0,0,0,0,0,0,2,0,0,
+8823,6,Red Two,0,0,0,1,0,0,0,0,0,0,4,0,0,Tried to get 30 in auto
+8823,,Blue One,0,0,0,0,0,0,0,0,0,0,2,0,0,
+,,(Choose),0,0,0,0,0,0,0,0,0,0,0,0,0,
+>>>>>>> a444cb51be6f5f0f4f1897be0cb759335351517a
