@@ -2134,7 +2134,7 @@
 <NumElts>4</NumElts>
 <Array>
 <Name>All Actuators</Name>
-<Dimsize>11</Dimsize>
+<Dimsize>12</Dimsize>
 <String>
 <Name></Name>
 <Val>!Left front</Val>
@@ -2179,10 +2179,14 @@
 <Name></Name>
 <Val>!Second Goal</Val>
 </String>
+<String>
+<Name></Name>
+<Val>!Wheel Arm</Val>
+</String>
 </Array>
 <Array>
 <Name>Position Control</Name>
-<Dimsize>5</Dimsize>
+<Dimsize>6</Dimsize>
 <String>
 <Name></Name>
 <Val>!IR Arm</Val>
@@ -2202,6 +2206,10 @@
 <String>
 <Name></Name>
 <Val>!Second Goal</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Wheel Arm</Val>
 </String>
 </Array>
 <Array>
