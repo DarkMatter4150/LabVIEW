@@ -29,9 +29,9 @@
 		<Item Name="Position_Three_Scoring.vi" Type="VI" URL="../SubVIs/Position_Three_Scoring.vi"/>
 		<Item Name="Position_Two_Scoring.vi" Type="VI" URL="../SubVIs/Position_Two_Scoring.vi"/>
 		<Item Name="Position_Two_ScoringB.vi" Type="VI" URL="../SubVIs/Position_Two_ScoringB.vi"/>
-		<Item Name="Tank.vi" Type="VI" URL="../Robo_Programs/Tank.vi"/>
 		<Item Name="tank_auto_sub_straight.vi" Type="VI" URL="../Robo_Programs/tank_auto_sub_straight.vi"/>
 		<Item Name="Tank_Demo.vi" Type="VI" URL="../Robo_Programs/Tank_Demo.vi"/>
+		<Item Name="Tank_oneC.vi" Type="VI" URL="../Robo_Programs/Tank_oneC.vi"/>
 		<Item Name="two_button_change.vi" Type="VI" URL="../Robo_Programs/two_button_change.vi"/>
 	</Item>
 	<Item Name="Robo_Schema" Type="Folder">

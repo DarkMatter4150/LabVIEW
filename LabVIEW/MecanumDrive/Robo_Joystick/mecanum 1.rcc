@@ -42,7 +42,7 @@
 <Name>Controller</Name>
 <Choice>Controller 1</Choice>
 <Choice>Controller 2</Choice>
-<Val>1</Val>
+<Val>0</Val>
 </EL>
 <Boolean>
 <Name>Invert Direction</Name>
@@ -2134,7 +2134,7 @@
 <NumElts>4</NumElts>
 <Array>
 <Name>All Actuators</Name>
-<Dimsize>9</Dimsize>
+<Dimsize>10</Dimsize>
 <String>
 <Name></Name>
 <Val>!Left Front</Val>
@@ -2161,36 +2161,36 @@
 </String>
 <String>
 <Name></Name>
-<Val>!C-Pivot</Val>
-</String>
-<String>
-<Name></Name>
 <Val>!C-Flap</Val>
 </String>
 <String>
 <Name></Name>
-<Val>!Goal Clamp</Val>
+<Val>!Pivot</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Arm Sweeper</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!IR Arm</Val>
 </String>
 </Array>
 <Array>
 <Name>Position Control</Name>
-<Dimsize>3</Dimsize>
-<String>
-<Name></Name>
-<Val>!C-Pivot</Val>
-</String>
+<Dimsize>2</Dimsize>
 <String>
 <Name></Name>
 <Val>!C-Flap</Val>
 </String>
 <String>
 <Name></Name>
-<Val>!Goal Clamp</Val>
+<Val>!IR Arm</Val>
 </String>
 </Array>
 <Array>
 <Name>Speed Control</Name>
-<Dimsize>6</Dimsize>
+<Dimsize>8</Dimsize>
 <String>
 <Name></Name>
 <Val>!Left Front</Val>
@@ -2214,11 +2214,19 @@
 <String>
 <Name></Name>
 <Val>!Sweeper</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Pivot</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Arm Sweeper</Val>
 </String>
 </Array>
 <Array>
 <Name>Distance Control</Name>
-<Dimsize>6</Dimsize>
+<Dimsize>8</Dimsize>
 <String>
 <Name></Name>
 <Val>!Left Front</Val>
@@ -2242,6 +2250,14 @@
 <String>
 <Name></Name>
 <Val>!Sweeper</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Pivot</Val>
+</String>
+<String>
+<Name></Name>
+<Val>!Arm Sweeper</Val>
 </String>
 </Array>
 </Cluster>
